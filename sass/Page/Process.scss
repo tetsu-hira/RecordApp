@@ -1,0 +1,189 @@
+.Process {
+  min-width: 960px;
+  margin-bottom: 50px;
+  &Container {
+    margin: auto 0;
+    padding-top: 64px;
+    width: 93%;
+    .ProcessMain {
+      display: flex;
+      .ProcessList {
+        width: 35%;
+        margin-left: 10px;
+        padding-right: 40px;
+        &__Border {
+          padding: 10px 0;
+          .SelectBox {
+            display: flex;
+          }
+          select {
+            width: 150px;
+            cursor: pointer;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            padding: 0 9px;
+            margin: 4px;
+            border: 1px solid $PrimaryColor;
+            text-align-last:right;
+            outline: none;
+            // appearance: none;
+            color: $FontColor;
+            height: 32px;
+            box-shadow: 1px 1px 3px 0 rgba(0, 0, 0, 0.25);
+            &:hover {
+              box-shadow: 2px 2px 3px 0 rgba(0, 0, 0, 0.25);
+              transform: translateY(-0.1875em);
+            }
+            option {
+              text-align: center;
+            }
+          }
+          .AddPlan {
+            background: $PrimaryColor;
+            font-size: 12px;
+            width: 64px;
+            height: 30px;
+            line-height: 20px;
+            text-align: center;
+            color: $WhiteColor;
+            border-top: 1px solid #cdd6df;
+            border-left: 1px solid #cdd6df;
+            border-bottom: 2px solid #7694b180;
+            border-right: 1px solid #cdd6df;
+            border-radius: 4px;
+            margin: 4px;
+            box-shadow: 0px 1px 4px 1px rgba(0, 0, 0, 20%);
+            -webkit-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+            &:hover {
+              cursor: pointer;
+            }
+            &:active {
+              -webkit-transform: translateY(2px);
+              transform: translateY(2px);
+              box-shadow: 0 0 2px rgba(0, 0, 0, 0.35);
+              border: 1px solid $PrimaryColor;
+            }
+            &:after {
+              position: absolute;
+              top: 0;
+              left: 0;
+              width: 15px;
+              height: 100%;
+              content: '';
+              -webkit-transition: all .3s;
+              transition: all .3s;
+              -webkit-transform: translateX(0) translateY(0);
+              transform: translateX(0) translateY(0);
+              border-radius: 0 50% 50% 0;
+              background: $PrimaryColor;
+            }
+            &:hover:after {
+              font-family: 'Font Awesome 5 Free';
+              font-weight: bold;
+              line-height: 30px;
+              width: 30px;
+              height: 30px;
+              content: '\f061';
+              -webkit-transform: translateX(460%) translateY(.5rem);
+              transform: translateX(250%) translateY(-2px);
+              color: #fff;
+              border-radius: 50%;
+            }
+          }
+        }
+      }
+      .Result {
+        width: 65%;
+        .title {
+          margin: auto 142px auto 44px;
+        }
+        &__Border {
+          padding: 10px 0;
+          .Flex {
+            display: flex;
+            .ResultIndex {
+              border: 1px solid $PrimaryColor;
+              width: 60px;
+              margin: 5px auto;
+              height: 30px;
+              box-shadow: 0px 1px 3px 0 rgba(0, 0, 0, 0.25);
+            }
+            .ResultName {
+              border: 1px solid $PrimaryColor;
+              width: 100%;
+              margin: 5px auto;
+              border-left: none;
+              box-shadow: 0px 1px 3px 0 rgba(0, 0, 0, 0.25);
+            }
+            .ResultTime {
+              border: 1px solid $PrimaryColor;
+              width: 120px;
+              margin: 5px 5px 5px auto;
+              border-left: none;
+              box-shadow: 0px 1px 3px 0 rgba(0, 0, 0, 0.25);
+            }
+            .AddCount {
+              background: $SubColor;
+              font-size: 12px;
+              width: 43px;
+              height: 22px;
+              // line-height: 20px;
+              text-align: center;
+              color: $FontColor;
+              border-top: 1px solid rgb(215, 215, 215);
+              border-left: 1px solid rgb(215, 215, 215);
+              border-bottom: 1px solid #9dabb780;
+              border-right: 1px solid #9dabb780;
+              border-radius: 10px;
+              margin: auto 2px;
+              padding: 0px 5px;
+              text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.65);
+              box-shadow: 1px 1px 3px 0px rgba(0, 0, 0, 20%);
+              &:hover {
+                cursor: pointer;
+              }
+              &:active {
+                -webkit-transform: translateY(2px);
+                transform: translateY(2px);
+                box-shadow: 0 0 2px rgba(0, 0, 0, 0.35);
+                border: 1px solid $SubColor;
+              }
+            }
+            .DeleteButton {
+              background: $PrimaryColor;
+              font-size: 12px;
+              min-width: 64px;
+              height: 30px;
+              line-height: 20px;
+              text-align: center;
+              color: $WhiteColor;
+              border: 2px solid $PrimaryColor;
+              border-radius: 4px;
+              margin: 5px 0 5px 10px;
+              box-shadow: 0px 1px 4px 1px rgba(0, 0, 0, 20%);
+              -webkit-transform-style: preserve-3d;
+              transform-style: preserve-3d;
+              border-top: 1px solid #cdd6df;
+              border-left: 1px solid #cdd6df;
+              border-bottom: solid 2px #7694b180;
+              border-right: solid 1px #cdd6df;
+              &:hover {
+                // color: red;
+                // transition: all 0.3s ease;
+                cursor: pointer;
+              }
+              &:active {
+                -webkit-transform: translateY(2px);
+                transform: translateY(2px);
+                box-shadow: 0 0 2px rgba(0, 0, 0, 0.35);
+                border: 1px solid $PrimaryColor;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
