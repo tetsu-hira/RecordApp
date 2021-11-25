@@ -361,7 +361,7 @@ type Pros = {
 const a:string = "a"
 
 const Process: React.FC = () => {
-  const [ plan, setPlan] = useState<Pros[]>([{name: "開始", time: 0.10, count: "b"}]);
+  const [ plan, setPlan] = useState<Pros[]>([]);
   const [ time, setTime ] = useState<number>(0);
   const [ count, setCount ] = useState<string>("a");
   const [ mcName, setMCName] = useState<string>(MC[0].name);
@@ -382,23 +382,23 @@ const Process: React.FC = () => {
   const [ flName, setFLName] = useState<string>(FL[0].name);
   const [ enName, setENName] = useState<string>(EN[0].name);
 
-  const clickAddMC = () => {setCount(count + a); setPlan([...plan, {name: mcName, time: 0.25, count: count }]);}
-  const clickAddLE = () => {setCount(count + a); setPlan([...plan, {name: leName, time: 0.25, count: count }]);}
-  const clickAddMV = () => {setCount(count + a); setPlan([...plan, {name: mvName, time: 0.25, count: count }]);}
-  const clickAddHQ = () => {setCount(count + a); setPlan([...plan, {name: hqName, time: 0.25, count: count }]);}
-  const clickAddSL = () => {setCount(count + a); setPlan([...plan, {name: slName, time: 0.25, count: count }]);}
-  const clickAddSG = () => {setCount(count + a); setPlan([...plan, {name: sgName, time: 0.25, count: count }]);}
-  const clickAddCG = () => {setCount(count + a); setPlan([...plan, {name: cgName, time: 0.25, count: count }]);}
-  const clickAddPG = () => {setCount(count + a); setPlan([...plan, {name: pgName, time: 0.25, count: count }]);}
-  const clickAddED = () => {setCount(count + a); setPlan([...plan, {name: edName, time: 0.25, count: count }]);}
-  const clickAddEH = () => {setCount(count + a); setPlan([...plan, {name: ehName, time: 0.25, count: count }]);}
-  const clickAddJG = () => {setCount(count + a); setPlan([...plan, {name: jgName, time: 0.25, count: count }]);}
-  const clickAddWQ = () => {setCount(count + a); setPlan([...plan, {name: wqName, time: 0.25, count: count }]);}
-  const clickAddWP = () => {setCount(count + a); setPlan([...plan, {name: wpName, time: 0.25, count: count }]);}
-  const clickAddMT = () => {setCount(count + a); setPlan([...plan, {name: mtName, time: 0.25, count: count }]);}
-  const clickAddCH = () => {setCount(count + a); setPlan([...plan, {name: chName, time: 0.25, count: count }]);}
-  const clickAddFL = () => {setCount(count + a); setPlan([...plan, {name: flName, time: 0.25, count: count }]);}
-  const clickAddEN = () => {setCount(count + a); setPlan([...plan, {name: enName, time: 0.25, count: count }]);}
+  const clickAddMC = () => {setCount(count + a); setPlan([...plan, {name: mcName, time: 0, count: count }]);}
+  const clickAddLE = () => {setCount(count + a); setPlan([...plan, {name: leName, time: 0, count: count }]);}
+  const clickAddMV = () => {setCount(count + a); setPlan([...plan, {name: mvName, time: 0, count: count }]);}
+  const clickAddHQ = () => {setCount(count + a); setPlan([...plan, {name: hqName, time: 0, count: count }]);}
+  const clickAddSL = () => {setCount(count + a); setPlan([...plan, {name: slName, time: 0, count: count }]);}
+  const clickAddSG = () => {setCount(count + a); setPlan([...plan, {name: sgName, time: 0, count: count }]);}
+  const clickAddCG = () => {setCount(count + a); setPlan([...plan, {name: cgName, time: 0, count: count }]);}
+  const clickAddPG = () => {setCount(count + a); setPlan([...plan, {name: pgName, time: 0, count: count }]);}
+  const clickAddED = () => {setCount(count + a); setPlan([...plan, {name: edName, time: 0, count: count }]);}
+  const clickAddEH = () => {setCount(count + a); setPlan([...plan, {name: ehName, time: 0, count: count }]);}
+  const clickAddJG = () => {setCount(count + a); setPlan([...plan, {name: jgName, time: 0, count: count }]);}
+  const clickAddWQ = () => {setCount(count + a); setPlan([...plan, {name: wqName, time: 0, count: count }]);}
+  const clickAddWP = () => {setCount(count + a); setPlan([...plan, {name: wpName, time: 0, count: count }]);}
+  const clickAddMT = () => {setCount(count + a); setPlan([...plan, {name: mtName, time: 0, count: count }]);}
+  const clickAddCH = () => {setCount(count + a); setPlan([...plan, {name: chName, time: 0, count: count }]);}
+  const clickAddFL = () => {setCount(count + a); setPlan([...plan, {name: flName, time: 0, count: count }]);}
+  const clickAddEN = () => {setCount(count + a); setPlan([...plan, {name: enName, time: 0, count: count }]);}
   
   // const handleChange = (e: React.ChangeEvent<HTMLSelectElement>) => { 
   //   setMCName(e.target.value); 
@@ -615,14 +615,35 @@ const Process: React.FC = () => {
                       <Draggable key={item.count} draggableId={item.count} index={idx}>
                         {(provided) => (
                           <div className="Flex" key={idx} ref={provided.innerRef} {...provided.draggableProps} {...provided.dragHandleProps}>
-                            <div className="ResultIndex">{idx}</div>
-                            <div className="ResultName">{item.name}</div>
-                            <div className="ResultTime">{item.time.toFixed(2)}h</div>
-                            <button className="AddCount" onClick={()=> addTime(idx, -0.25)}>-0.25</button>
-                            <button className="AddCount" onClick={()=> addTime(idx, 0.25)}>+0.25</button>
-                            <button className="AddCount" onClick={()=> addTime(idx, 1.00)}>+1.00</button>
-                            <button className="AddCount" onClick={()=> addTime(idx, 10.0)}>+10.0</button>
-                            <button className="DeleteButton" onClick={()=> handleRemoveTask(idx)}>削 除</button>
+                            {/* <div className="ResultIndex">{idx}</div> */}
+                            <div className="FlexCount">
+                              <div className="FlexCount__flex">
+                                <button className="AddCount" onClick={()=> addTime(idx, -1)}>-</button>
+                                <button className="AddCount" onClick={()=> addTime(idx, 1)}>+</button>
+                                <div className="ResultTime">{item.time}</div>
+                              </div>
+                              <div className="FlexCount__flex">
+                                <button className="AddCount" onClick={()=> addTime(idx, -1)}>-</button>
+                                <button className="AddCount" onClick={()=> addTime(idx, 1)}>+</button>
+                                <div className="ResultTime">{item.time}</div>
+                              </div>
+                            </div>
+                            <div className="FlexName">
+                              <div className="ResultName">{item.name}</div>
+                              <button className="DeleteButton" onClick={()=> handleRemoveTask(idx)}>削 除</button>
+                            </div>
+                            <div className="FlexCount">
+                              <div className="FlexCount__flex">
+                                <div className="ResultTime">{item.time}</div>
+                                <button className="AddCount" onClick={()=> addTime(idx, -1)}>-</button>
+                                <button className="AddCount" onClick={()=> addTime(idx, 1)}>+</button>
+                              </div>
+                              <div className="FlexCount__flex">
+                                <div className="ResultTime">{item.time}</div>
+                                <button className="AddCount" onClick={()=> addTime(idx, -1)}>-</button>
+                                <button className="AddCount" onClick={()=> addTime(idx, 1)}>+</button>
+                              </div>
+                            </div>
                           </div>
                         )}
                       </Draggable>

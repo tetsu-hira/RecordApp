@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import Header from './components/Header';
-import Footer from './components/Footer';
+// import Footer from './components/Footer';
 import Process from './components/Process';
 
 const App: React.FC = () => {
@@ -9,7 +9,7 @@ const App: React.FC = () => {
     <div className="App">
       <Header />
       <Process />
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 }

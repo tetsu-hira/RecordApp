@@ -228,83 +228,99 @@ button {
   margin: auto 142px auto 44px;
 }
 .ProcessContainer .ProcessMain .Result__Border {
-  padding: 10px 0;
+  padding-top: 5px;
+  display: flex;
+  flex-wrap: wrap;
 }
 .ProcessContainer .ProcessMain .Result__Border .Flex {
   display: flex;
+  width: 50%;
 }
-.ProcessContainer .ProcessMain .Result__Border .Flex .ResultIndex {
-  border: 1px solid #b7cadc;
+.ProcessContainer .ProcessMain .Result__Border .FlexCount {
+  height: 88px;
+}
+.ProcessContainer .ProcessMain .Result__Border .FlexCount__flex {
+  display: flex;
+  height: 44px;
+}
+.ProcessContainer .ProcessMain .Result__Border .FlexCount__flex .ResultTime {
   width: 60px;
-  margin: 5px auto;
-  height: 30px;
-  box-shadow: 0px 1px 3px 0 rgba(0, 0, 0, 0.25);
+  margin: auto;
+  font-size: 1.5rem;
 }
-.ProcessContainer .ProcessMain .Result__Border .Flex .ResultName {
-  border: 1px solid #b7cadc;
-  width: 100%;
-  margin: 5px auto;
-  border-left: none;
-  box-shadow: 0px 1px 3px 0 rgba(0, 0, 0, 0.25);
-}
-.ProcessContainer .ProcessMain .Result__Border .Flex .ResultTime {
-  border: 1px solid #b7cadc;
-  width: 120px;
-  margin: 5px 5px 5px auto;
-  border-left: none;
-  box-shadow: 0px 1px 3px 0 rgba(0, 0, 0, 0.25);
-}
-.ProcessContainer .ProcessMain .Result__Border .Flex .AddCount {
+.ProcessContainer .ProcessMain .Result__Border .FlexCount__flex .AddCount {
   background: #e2f1f1;
-  font-size: 12px;
-  width: 43px;
-  height: 22px;
+  font-size: 1rem;
+  width: 26px;
+  height: 25px;
   text-align: center;
   color: #6c7686;
   border-top: 1px solid #d7d7d7;
   border-left: 1px solid #d7d7d7;
   border-bottom: 1px solid #9dabb780;
   border-right: 1px solid #9dabb780;
-  border-radius: 10px;
+  border-radius: 14px;
   margin: auto 2px;
-  padding: 0px 5px;
+  padding: 0;
   text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.65);
   box-shadow: 1px 1px 3px 0px rgba(0, 0, 0, 0.2);
+  font-family: "Font Awesome 5 Free";
 }
-.ProcessContainer .ProcessMain .Result__Border .Flex .AddCount:hover {
+.ProcessContainer .ProcessMain .Result__Border .FlexCount__flex .AddCount:hover {
   cursor: pointer;
 }
-.ProcessContainer .ProcessMain .Result__Border .Flex .AddCount:active {
+.ProcessContainer .ProcessMain .Result__Border .FlexCount__flex .AddCount:active {
   -webkit-transform: translateY(2px);
   transform: translateY(2px);
   box-shadow: 0 0 2px rgba(0, 0, 0, 0.35);
   border: 1px solid #e2f1f1;
 }
-.ProcessContainer .ProcessMain .Result__Border .Flex .DeleteButton {
-  background: #b7cadc;
-  font-size: 12px;
-  min-width: 64px;
+.ProcessContainer .ProcessMain .Result__Border .FlexName {
+  width: 520px;
+}
+.ProcessContainer .ProcessMain .Result__Border .FlexName .ResultIndex {
+  border: 1px solid #b7cadc;
+  width: 60px;
+  margin: 5px auto;
   height: 30px;
-  line-height: 20px;
+  box-shadow: 0px 1px 3px 0 rgba(0, 0, 0, 0.25);
+}
+.ProcessContainer .ProcessMain .Result__Border .FlexName .ResultName {
+  font-size: 1.5rem;
+  border: 1px solid #b7cadc;
+  width: 240px;
+  height: 44px;
+  line-height: 40px;
+  margin: 4px auto;
+  box-shadow: 0px 1px 3px 0 rgba(0, 0, 0, 0.25);
+}
+.ProcessContainer .ProcessMain .Result__Border .FlexName .DeleteButton {
+  background: #b7cadc;
+  font-size: 0.8rem;
+  min-width: 64px;
+  height: 22px;
   text-align: center;
   color: #fff;
-  border: 2px solid #b7cadc;
   border-radius: 4px;
-  margin: 5px 0 5px 10px;
-  box-shadow: 0px 1px 4px 1px rgba(0, 0, 0, 0.2);
+  margin: auto;
+  box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2);
   -webkit-transform-style: preserve-3d;
   transform-style: preserve-3d;
   border-top: 1px solid #cdd6df;
   border-left: 1px solid #cdd6df;
-  border-bottom: solid 2px #7694b180;
+  border-bottom: solid 2px #7694b133;
   border-right: solid 1px #cdd6df;
 }
-.ProcessContainer .ProcessMain .Result__Border .Flex .DeleteButton:hover {
+.ProcessContainer .ProcessMain .Result__Border .FlexName .DeleteButton:hover {
   cursor: pointer;
 }
-.ProcessContainer .ProcessMain .Result__Border .Flex .DeleteButton:active {
+.ProcessContainer .ProcessMain .Result__Border .FlexName .DeleteButton:active {
   -webkit-transform: translateY(2px);
   transform: translateY(2px);
   box-shadow: 0 0 2px rgba(0, 0, 0, 0.35);
   border: 1px solid #b7cadc;
+}
+
+.None {
+  display: none;
 }
