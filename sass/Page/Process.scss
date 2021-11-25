@@ -1,5 +1,4 @@
 .Process {
-  min-width: 960px;
   margin-bottom: 50px;
   &Container {
     margin: auto 0;
@@ -7,6 +6,7 @@
     // width: 93%;
     .ProcessMain {
       display: flex;
+      min-width: 1280px;
       .ProcessList {
         width: 320px;
         margin-left: 30px;

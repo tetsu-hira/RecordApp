@@ -124,7 +124,6 @@ button {
 }
 
 .Process {
-  min-width: 960px;
   margin-bottom: 50px;
 }
 .ProcessContainer {
@@ -133,6 +132,7 @@ button {
 }
 .ProcessContainer .ProcessMain {
   display: flex;
+  min-width: 1280px;
 }
 .ProcessContainer .ProcessMain .ProcessList {
   width: 320px;
