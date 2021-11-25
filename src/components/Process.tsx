@@ -2,7 +2,7 @@ import { useState } from "react";
 import * as React from 'react';
 import ExcelJS from "exceljs";
 // import File from "./File";
-import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd"
+// import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd"
 // import { useEffect } from "react";
 // import Select from 'react-select';
 // import ReactDOM from "react-dom";
@@ -340,12 +340,13 @@ const EN: Pro[] = [
 
 type Pros = {
   name: string
-  time: number
+  time1: number
+  time2: number
   count: string
 }
 // type Cell = {
 //   name: string
-//   time: number
+//   time1: number
 // }
 // const reorder = (
 //   list: ItemType[],
@@ -362,7 +363,8 @@ const a:string = "a"
 
 const Process: React.FC = () => {
   const [ plan, setPlan] = useState<Pros[]>([]);
-  const [ time, setTime ] = useState<number>(0);
+  const [ time1, setTime1 ] = useState<number>(0);
+  const [ time2, setTime2 ] = useState<number>(0);
   const [ count, setCount ] = useState<string>("a");
   const [ mcName, setMCName] = useState<string>(MC[0].name);
   const [ leName, setLEName] = useState<string>(LE[0].name);
@@ -382,23 +384,23 @@ const Process: React.FC = () => {
   const [ flName, setFLName] = useState<string>(FL[0].name);
   const [ enName, setENName] = useState<string>(EN[0].name);
 
-  const clickAddMC = () => {setCount(count + a); setPlan([...plan, {name: mcName, time: 0, count: count }]);}
-  const clickAddLE = () => {setCount(count + a); setPlan([...plan, {name: leName, time: 0, count: count }]);}
-  const clickAddMV = () => {setCount(count + a); setPlan([...plan, {name: mvName, time: 0, count: count }]);}
-  const clickAddHQ = () => {setCount(count + a); setPlan([...plan, {name: hqName, time: 0, count: count }]);}
-  const clickAddSL = () => {setCount(count + a); setPlan([...plan, {name: slName, time: 0, count: count }]);}
-  const clickAddSG = () => {setCount(count + a); setPlan([...plan, {name: sgName, time: 0, count: count }]);}
-  const clickAddCG = () => {setCount(count + a); setPlan([...plan, {name: cgName, time: 0, count: count }]);}
-  const clickAddPG = () => {setCount(count + a); setPlan([...plan, {name: pgName, time: 0, count: count }]);}
-  const clickAddED = () => {setCount(count + a); setPlan([...plan, {name: edName, time: 0, count: count }]);}
-  const clickAddEH = () => {setCount(count + a); setPlan([...plan, {name: ehName, time: 0, count: count }]);}
-  const clickAddJG = () => {setCount(count + a); setPlan([...plan, {name: jgName, time: 0, count: count }]);}
-  const clickAddWQ = () => {setCount(count + a); setPlan([...plan, {name: wqName, time: 0, count: count }]);}
-  const clickAddWP = () => {setCount(count + a); setPlan([...plan, {name: wpName, time: 0, count: count }]);}
-  const clickAddMT = () => {setCount(count + a); setPlan([...plan, {name: mtName, time: 0, count: count }]);}
-  const clickAddCH = () => {setCount(count + a); setPlan([...plan, {name: chName, time: 0, count: count }]);}
-  const clickAddFL = () => {setCount(count + a); setPlan([...plan, {name: flName, time: 0, count: count }]);}
-  const clickAddEN = () => {setCount(count + a); setPlan([...plan, {name: enName, time: 0, count: count }]);}
+  const clickAddMC = () => {setCount(count + a); setPlan([...plan, {name: mcName, time1: 0, time2: 0, count: count }]);}
+  const clickAddLE = () => {setCount(count + a); setPlan([...plan, {name: leName, time1: 0, time2: 0, count: count }]);}
+  const clickAddMV = () => {setCount(count + a); setPlan([...plan, {name: mvName, time1: 0, time2: 0, count: count }]);}
+  const clickAddHQ = () => {setCount(count + a); setPlan([...plan, {name: hqName, time1: 0, time2: 0, count: count }]);}
+  const clickAddSL = () => {setCount(count + a); setPlan([...plan, {name: slName, time1: 0, time2: 0, count: count }]);}
+  const clickAddSG = () => {setCount(count + a); setPlan([...plan, {name: sgName, time1: 0, time2: 0, count: count }]);}
+  const clickAddCG = () => {setCount(count + a); setPlan([...plan, {name: cgName, time1: 0, time2: 0, count: count }]);}
+  const clickAddPG = () => {setCount(count + a); setPlan([...plan, {name: pgName, time1: 0, time2: 0, count: count }]);}
+  const clickAddED = () => {setCount(count + a); setPlan([...plan, {name: edName, time1: 0, time2: 0, count: count }]);}
+  const clickAddEH = () => {setCount(count + a); setPlan([...plan, {name: ehName, time1: 0, time2: 0, count: count }]);}
+  const clickAddJG = () => {setCount(count + a); setPlan([...plan, {name: jgName, time1: 0, time2: 0, count: count }]);}
+  const clickAddWQ = () => {setCount(count + a); setPlan([...plan, {name: wqName, time1: 0, time2: 0, count: count }]);}
+  const clickAddWP = () => {setCount(count + a); setPlan([...plan, {name: wpName, time1: 0, time2: 0, count: count }]);}
+  const clickAddMT = () => {setCount(count + a); setPlan([...plan, {name: mtName, time1: 0, time2: 0, count: count }]);}
+  const clickAddCH = () => {setCount(count + a); setPlan([...plan, {name: chName, time1: 0, time2: 0, count: count }]);}
+  const clickAddFL = () => {setCount(count + a); setPlan([...plan, {name: flName, time1: 0, time2: 0, count: count }]);}
+  const clickAddEN = () => {setCount(count + a); setPlan([...plan, {name: enName, time1: 0, time2: 0, count: count }]);}
   
   // const handleChange = (e: React.ChangeEvent<HTMLSelectElement>) => { 
   //   setMCName(e.target.value); 
@@ -411,11 +413,17 @@ const Process: React.FC = () => {
     setPlan(newPlan)
   }
 
-  const addTime = (index:number, minute:number) => {
+  const addTime1 = (index:number, minute:number) => {
     const targetPlan: any = plan.find((elem) => plan[index] === elem )
-    targetPlan.time = targetPlan.time + minute
-    setTime(targetPlan.time)
-    console.log(time);
+    targetPlan.time1 = targetPlan.time1 + minute
+    setTime1(targetPlan.time1)
+    console.log(time1);
+  }
+  const addTime2 = (index:number, minute:number) => {
+    const targetPlan: any = plan.find((elem) => plan[index] === elem )
+    targetPlan.time2 = targetPlan.time2 + minute
+    setTime2(targetPlan.time2)
+    console.log(time2);
   }
 
   // const [ data, setData ] = useState<Pros[]>([]);
@@ -432,7 +440,7 @@ const Process: React.FC = () => {
     worksheet.columns = [
       { header: "No.", key: "", width: 10 },
       { header: "工程", key: "name", width: 20},
-      { header: "時間", key: "time", width: 20}
+      { header: "時間", key: "time1", width: 20}
     ];
 
     worksheet.addRows(plan);
@@ -450,16 +458,18 @@ const Process: React.FC = () => {
     a.remove();
   };
 
-  const handleOnDragEnd = (result:any) => {
-    const items = Array.from(plan);
-    const [reorderedItem] = items.splice(result.source.index, 1);
-    items.splice(result.destination.index, 0, reorderedItem);
+  // const handleOnDragEnd = (result:any) => {
+  //   const items = Array.from(plan);
+  //   const [reorderedItem] = items.splice(result.source.index, 1);
+  //   items.splice(result.destination.index, 0, reorderedItem);
 
-    setPlan(items);
-  }
+  //   setPlan(items);
+  // }
 
+  // 確認のため設置
   console.log(plan);
-  
+
+
   return (
     <div className="Process">
       <div className="ProcessContainer">
@@ -607,52 +617,47 @@ const Process: React.FC = () => {
           </div>
           <div className="Result">
             <h1 className="title">【工程設計】</h1>
-            <DragDropContext onDragEnd={handleOnDragEnd}>
-              <Droppable droppableId="Result__Border">
-                {(provided) => (
-                  <div className="Result__Border" {...provided.droppableProps} ref={provided.innerRef}>
-                    { plan.map((item, idx: number) => (
-                      <Draggable key={item.count} draggableId={item.count} index={idx}>
-                        {(provided) => (
-                          <div className="Flex" key={idx} ref={provided.innerRef} {...provided.draggableProps} {...provided.dragHandleProps}>
-                            {/* <div className="ResultIndex">{idx}</div> */}
-                            <div className="FlexCount">
-                              <div className="FlexCount__flex">
-                                <button className="AddCount" onClick={()=> addTime(idx, -1)}>-</button>
-                                <button className="AddCount" onClick={()=> addTime(idx, 1)}>+</button>
-                                <div className="ResultTime">{item.time}</div>
-                              </div>
-                              <div className="FlexCount__flex">
-                                <button className="AddCount" onClick={()=> addTime(idx, -1)}>-</button>
-                                <button className="AddCount" onClick={()=> addTime(idx, 1)}>+</button>
-                                <div className="ResultTime">{item.time}</div>
-                              </div>
-                            </div>
-                            <div className="FlexName">
-                              <div className="ResultName">{item.name}</div>
-                              <button className="DeleteButton" onClick={()=> handleRemoveTask(idx)}>削 除</button>
-                            </div>
-                            <div className="FlexCount">
-                              <div className="FlexCount__flex">
-                                <div className="ResultTime">{item.time}</div>
-                                <button className="AddCount" onClick={()=> addTime(idx, -1)}>-</button>
-                                <button className="AddCount" onClick={()=> addTime(idx, 1)}>+</button>
-                              </div>
-                              <div className="FlexCount__flex">
-                                <div className="ResultTime">{item.time}</div>
-                                <button className="AddCount" onClick={()=> addTime(idx, -1)}>-</button>
-                                <button className="AddCount" onClick={()=> addTime(idx, 1)}>+</button>
-                              </div>
-                            </div>
-                          </div>
-                        )}
-                      </Draggable>
-                    )) }
-                    {provided.placeholder}
+              <div className="Result__Border">
+                { plan.map((item, idx: number) => (
+                  <div className="Flex" key={count}>
+                    <div className="FlexNumber">
+                      { idx % 2 === 0 && <div className="FlexNumber__item">第{idx}試合</div> }
+                    </div>
+                    <div className="FlexCross">
+                      { idx % 2 !== 0 && <div className="FlexCross__item">✖</div> }
+                      { idx % 2 !== 0 && <div className="FlexCross__item">✖</div> }
+                    </div>
+                    <div className="FlexCount">
+                      <div className="FlexCount__flex">
+                        { idx % 2 === 0 && <button className="AddCount" onClick={()=> addTime1(idx, -1)}>-</button> }
+                        { idx % 2 === 0 && <button className="AddCount" onClick={()=> addTime1(idx, 1)}>+</button> }
+                        { idx % 2 !== 0 && <div className="ResultTime">{item.time1}</div> }
+                      </div>
+                      <div className="FlexCount__flex">
+                        { idx % 2 === 0 && <button className="AddCount" onClick={()=> addTime2(idx, -1)}>-</button> }
+                        { idx % 2 === 0 && <button className="AddCount" onClick={()=> addTime2(idx, 1)}>+</button> }
+                        { idx % 2 !== 0 && <div className="ResultTime">{item.time2}</div> }
+                      </div>
+                    </div>
+                    <div className="FlexName">
+                      <div className="ResultName">{item.name}</div>
+                      <button className="DeleteButton" onClick={()=> handleRemoveTask(idx)}>取消</button>
+                    </div>
+                    <div className="FlexCount">
+                      <div className="FlexCount__flex">
+                        { idx % 2 !== 0 && <button className="AddCount" onClick={()=> addTime1(idx, -1)}>-</button> }
+                        { idx % 2 !== 0 && <button className="AddCount" onClick={()=> addTime1(idx, 1)}>+</button> }
+                        { idx % 2 === 0 && <div className="ResultTime">{item.time1}</div> }
+                      </div>
+                      <div className="FlexCount__flex">
+                        { idx % 2 !== 0 && <button className="AddCount" onClick={()=> addTime2(idx, -1)}>-</button> }
+                        { idx % 2 !== 0 && <button className="AddCount" onClick={()=> addTime2(idx, 1)}>+</button> }
+                        { idx % 2 === 0 && <div className="ResultTime">{item.time2}</div> }
+                      </div>
+                    </div>
                   </div>
-                )}
-              </Droppable>
-            </DragDropContext>
+                )) }
+              </div>
             <div>
               <button onClick={(e) => handleClickDownloadButton(e, "xlsx")}>
                 Excel印刷
