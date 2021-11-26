@@ -123,6 +123,158 @@ button {
   transition: 0.1s;
 }
 
+.Form {
+  display: flex;
+}
+.FormContent {
+  display: flex;
+}
+.FormContent__name {
+  height: 40px;
+  border: 1px solid #b7cadc;
+  display: flex;
+  align-items: center;
+  margin: auto 7px;
+  width: 200px;
+  box-shadow: 1px 1px 3px -1px rgba(0, 0, 0, 0.3);
+}
+.FormContent__button {
+  background: #dcc9b7;
+  font-size: 12px;
+  width: 100px;
+  height: 40px;
+  line-height: 20px;
+  text-align: center;
+  color: #fff;
+  border: 1px solid #dcc9b7;
+  margin: 8px 0;
+  box-shadow: 3px 2px 8px 0 rgba(0, 0, 0, 0.2);
+}
+.FormContent__button:hover {
+  background-color: #ffffff;
+  color: #dcc9b7;
+  transition: all 0.3s ease;
+}
+
+.Head {
+  height: 40px;
+  margin: 4px 0;
+  border-top: none;
+  display: flex;
+  align-items: center;
+  border: 1px solid #e2f1f1;
+  width: 100%;
+  background-color: #b7cadc;
+  box-shadow: 1px 1px 3px -1px rgba(0, 0, 0, 0.3);
+}
+.Head .name {
+  font-size: 14px;
+  font-weight: 500;
+  color: #6c7686;
+  margin: auto auto auto 0;
+  text-align: left;
+  padding-left: 10px;
+  width: 200px;
+}
+.Head .gross {
+  font-size: 14px;
+  font-weight: 500;
+  width: 80px;
+  font-weight: 600;
+  height: 36px;
+  line-height: 40px;
+  background: #f5f5f5;
+  margin: auto;
+  text-align: center;
+}
+.Head .point {
+  font-size: 14px;
+  font-weight: 500;
+  width: 80px;
+  font-weight: 600;
+  height: 36px;
+  line-height: 40px;
+  background: #f5f5f5;
+  margin: auto;
+  text-align: center;
+}
+.Head .score {
+  font-size: 14px;
+  font-weight: 500;
+  color: #6c7686;
+  width: 80px;
+  font-weight: 600;
+  height: 36px;
+  line-height: 40px;
+  background: #f5f5f5;
+  margin: auto;
+  text-align: center;
+}
+.Head .space {
+  width: auto;
+}
+
+.Item {
+  background-color: #fff;
+}
+.ItemList {
+  height: 40px;
+  margin: 4px 0;
+  border-top: none;
+  display: flex;
+  align-items: center;
+  border: 1px solid #e2f1f1;
+}
+.ItemList__data {
+  display: flex;
+  width: 100%;
+  background-color: #fff;
+  box-shadow: 1px 1px 3px -1px rgba(0, 0, 0, 0.3);
+}
+.ItemList__data .name {
+  font-size: 14px;
+  font-weight: 500;
+  color: #6c7686;
+  margin: auto auto auto 0;
+  text-align: left;
+  padding-left: 10px;
+  width: 200px;
+}
+.ItemList__data .gross {
+  font-size: 14px;
+  font-weight: 500;
+  width: 80px;
+  font-weight: 600;
+  height: 36px;
+  line-height: 40px;
+  background: #f5f5f5;
+  margin: auto;
+  text-align: center;
+}
+.ItemList__data .point {
+  font-size: 14px;
+  font-weight: 500;
+  width: 80px;
+  font-weight: 600;
+  height: 36px;
+  line-height: 40px;
+  background: #f5f5f5;
+  margin: auto;
+  text-align: center;
+}
+.ItemList__data .score {
+  font-size: 14px;
+  font-weight: 500;
+  color: #6c7686;
+  width: 80px;
+  font-weight: 600;
+  height: 36px;
+  line-height: 40px;
+  background: #f5f5f5;
+  margin: auto;
+  text-align: center;
+}
+
 .Process {
   margin-bottom: 50px;
 }
@@ -137,6 +289,7 @@ button {
 .ProcessContainer .ProcessMain .ProcessList {
   width: 320px;
   margin-left: 30px;
+  margin-right: 30px;
 }
 .ProcessContainer .ProcessMain .ProcessList__Border {
   padding: 10px 0;
@@ -193,32 +346,6 @@ button {
   box-shadow: 0 0 2px rgba(0, 0, 0, 0.35);
   border: 1px solid #b7cadc;
 }
-.ProcessContainer .ProcessMain .ProcessList__Border .AddPlan:after {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 15px;
-  height: 100%;
-  content: "";
-  -webkit-transition: all 0.3s;
-  transition: all 0.3s;
-  -webkit-transform: translateX(0) translateY(0);
-  transform: translateX(0) translateY(0);
-  border-radius: 0 50% 50% 0;
-  background: #b7cadc;
-}
-.ProcessContainer .ProcessMain .ProcessList__Border .AddPlan:hover:after {
-  font-family: "Font Awesome 5 Free";
-  font-weight: bold;
-  line-height: 30px;
-  width: 30px;
-  height: 30px;
-  content: "\f061";
-  -webkit-transform: translateX(460%) translateY(0.5rem);
-  transform: translateX(250%) translateY(-2px);
-  color: #fff;
-  border-radius: 50%;
-}
 .ProcessContainer .ProcessMain .Result {
   width: 920px;
 }
@@ -234,6 +361,9 @@ button {
 .ProcessContainer .ProcessMain .Result__Border .Flex {
   display: flex;
   width: 50%;
+  margin-bottom: 1em;
+  padding-bottom: 1em;
+  border-bottom: 1px solid #b7cadc;
 }
 .ProcessContainer .ProcessMain .Result__Border .FlexCount {
   height: 88px;

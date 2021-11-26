@@ -10,7 +10,7 @@
       .ProcessList {
         width: 320px;
         margin-left: 30px;
-        // padding-right: 40px;
+        margin-right: 30px;
         &__Border {
           padding: 10px 0;
           .SelectBox {
@@ -65,32 +65,6 @@
               box-shadow: 0 0 2px rgba(0, 0, 0, 0.35);
               border: 1px solid $PrimaryColor;
             }
-            &:after {
-              position: absolute;
-              top: 0;
-              left: 0;
-              width: 15px;
-              height: 100%;
-              content: '';
-              -webkit-transition: all .3s;
-              transition: all .3s;
-              -webkit-transform: translateX(0) translateY(0);
-              transform: translateX(0) translateY(0);
-              border-radius: 0 50% 50% 0;
-              background: $PrimaryColor;
-            }
-            &:hover:after {
-              font-family: 'Font Awesome 5 Free';
-              font-weight: bold;
-              line-height: 30px;
-              width: 30px;
-              height: 30px;
-              content: '\f061';
-              -webkit-transform: translateX(460%) translateY(.5rem);
-              transform: translateX(250%) translateY(-2px);
-              color: #fff;
-              border-radius: 50%;
-            }
           }
         }
       }
@@ -107,6 +81,9 @@
           .Flex {
             display: flex;
             width: 50%;
+            margin-bottom: 1em;
+            padding-bottom: 1em;
+            border-bottom: 1px solid $PrimaryColor;
             &Count {
               height: 88px;
               &__flex {

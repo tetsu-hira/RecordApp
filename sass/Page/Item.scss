@@ -1,0 +1,60 @@
+.Item {
+  background-color: $BackColor;
+  &List {
+    height: 40px;
+    margin: 4px 0;
+    border-top: none;
+    display: flex;
+    align-items: center;
+    border: 1px solid $SubColor;
+    &__data {
+      display: flex;
+      width: 100%;
+      background-color: #fff;
+      box-shadow: 1px 1px 3px -1px rgba(0, 0, 0, 0.3);
+      .name {
+        font-size: 14px;
+        font-weight: 500;
+        color: $FontColor;
+        margin: auto auto auto 0;
+        text-align: left;
+        padding-left: 10px;
+        width: 200px;
+      }
+      .gross {
+        font-size: 14px;
+        font-weight: 500;
+        width: 80px;
+        font-weight: 600;
+        height: 36px;
+        line-height: 40px;
+        background: $ChangeColor;
+        margin: auto;
+        text-align: center;
+      }
+      .point {
+        font-size: 14px;
+        font-weight: 500;
+        width: 80px;
+        font-weight: 600;
+        height: 36px;
+        line-height: 40px;
+        background: $ChangeColor;
+        margin: auto;
+        text-align: center;
+      }
+      .score {
+        font-size: 14px;
+        font-weight: 500;
+        color: $FontColor;
+        width: 80px;
+        font-weight: 600;
+        height: 36px;
+        line-height: 40px;
+        background: $ChangeColor;
+        margin: auto;
+        text-align: center;
+      }
+    }
+  }
+}
