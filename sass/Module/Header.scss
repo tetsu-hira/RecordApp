@@ -30,6 +30,21 @@
       }
     }
   }
+  &Title {
+    width: 100%;
+    color: $FontColor;
+    border: none;
+    background-color: $PrimaryColor;
+    margin-left: 48px;
+    line-height: 2;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    outline: none;
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.65);
+  }
   .Jump {
     display: flex;
     line-height: 2;

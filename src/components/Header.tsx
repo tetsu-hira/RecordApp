@@ -1,30 +1,25 @@
 import React from 'react';
-import File from "./File";
+import { useState } from "react";
+import { useEffect } from "react";
 
 
 
 
 const Header: React.FC = () => {
+  const [ title, setTitle ] = useState<string>("※ここに大会名や部門を入力してください※")
+
+  const changeTitle = (e:any) => {
+    setTitle(e.target.value);
+  }
+
+  useEffect(() => {
+    // Update the document title using the browser API
+    document.title = title
+  });
+
   return (
     <div className="Header">
-      <h1>
-        <a href="/">Process Design</a>
-      </h1>
-      <ul className="Jump">
-        <File />
-        <li className="JumpList">
-          <a href="/" className="JumpList__item">GOAL</a>
-        </li>
-        <li className="JumpList">
-          <a href="/" className="JumpList__item">BASE</a>
-        </li>
-        <li className="JumpList">
-          <a href="/" className="JumpList__item">RECORD</a>
-        </li>
-        <li className="JumpList">
-          <a href="/" className="JumpList__item">EVENT</a>
-        </li>
-      </ul>
+        <input className="HeaderTitle" type="text" onChange={changeTitle} value={title} />
     </div>
   )
 }

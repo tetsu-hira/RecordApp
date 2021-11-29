@@ -13,47 +13,48 @@
       background-color: #fff;
       box-shadow: 1px 1px 3px -1px rgba(0, 0, 0, 0.3);
       .name {
-        font-size: 14px;
-        font-weight: 500;
+        font-size: 1rem;
         color: $FontColor;
-        margin: auto auto auto 0;
+        margin: auto 0;
         text-align: left;
-        padding-left: 10px;
-        width: 200px;
+        padding-left: 6px;
+        width: 124px;
+        line-height: 1;
       }
       .gross {
-        font-size: 14px;
-        font-weight: 500;
-        width: 80px;
+        font-size: 1rem;
+        width: 64px;
         font-weight: 600;
         height: 36px;
-        line-height: 40px;
+        line-height: 2.2;
         background: $ChangeColor;
         margin: auto;
         text-align: center;
       }
       .point {
-        font-size: 14px;
-        font-weight: 500;
-        width: 80px;
+        font-size: 1rem;
+        width: 64px;
         font-weight: 600;
         height: 36px;
-        line-height: 40px;
+        line-height: 2.2;
         background: $ChangeColor;
         margin: auto;
         text-align: center;
       }
       .score {
-        font-size: 14px;
-        font-weight: 500;
+        font-size: 1rem;
         color: $FontColor;
-        width: 80px;
+        width: 64px;
         font-weight: 600;
         height: 36px;
-        line-height: 40px;
+        line-height: 2.2;
         background: $ChangeColor;
         margin: auto;
         text-align: center;
+      }
+      .AddPlan {
+        width: 48px;
+        margin: auto 5px auto 0;
       }
     }
   }

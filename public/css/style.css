@@ -59,7 +59,6 @@ button {
 }
 
 .Footer {
-  position: absolute;
   bottom: 0;
   width: 100%;
   margin: auto;
@@ -92,6 +91,21 @@ button {
 }
 .Header h1 a:hover {
   opacity: 0.6;
+}
+.HeaderTitle {
+  width: 100%;
+  color: #6c7686;
+  border: none;
+  background-color: #b7cadc;
+  margin-left: 48px;
+  line-height: 2;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  outline: none;
+  font-size: 1.5rem;
+  font-weight: 600;
+  text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.65);
 }
 .Header .Jump {
   display: flex;
@@ -148,7 +162,7 @@ button {
   color: #fff;
   border: 1px solid #dcc9b7;
   margin: 8px 0;
-  box-shadow: 3px 2px 8px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 2px 1px 5px 0 rgba(0, 0, 0, 0.2);
 }
 .FormContent__button:hover {
   background-color: #ffffff;
@@ -162,56 +176,50 @@ button {
   border-top: none;
   display: flex;
   align-items: center;
-  border: 1px solid #e2f1f1;
+  border: 1px solid #fff;
   width: 100%;
   background-color: #b7cadc;
   box-shadow: 1px 1px 3px -1px rgba(0, 0, 0, 0.3);
+  text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.65);
 }
 .Head .name {
-  font-size: 14px;
-  font-weight: 500;
+  font-size: 0.8rem;
+  font-weight: 600;
   color: #6c7686;
-  margin: auto auto auto 0;
-  text-align: left;
-  padding-left: 10px;
-  width: 200px;
+  margin: auto 0;
+  text-align: center;
+  width: 124px;
 }
 .Head .gross {
-  font-size: 14px;
-  font-weight: 500;
-  width: 80px;
+  font-size: 0.8rem;
   font-weight: 600;
+  width: 64px;
   height: 36px;
-  line-height: 40px;
-  background: #f5f5f5;
+  line-height: 36px;
   margin: auto;
   text-align: center;
 }
 .Head .point {
-  font-size: 14px;
-  font-weight: 500;
-  width: 80px;
+  font-size: 0.8rem;
   font-weight: 600;
+  width: 64px;
   height: 36px;
-  line-height: 40px;
-  background: #f5f5f5;
+  line-height: 36px;
   margin: auto;
   text-align: center;
 }
 .Head .score {
-  font-size: 14px;
-  font-weight: 500;
-  color: #6c7686;
-  width: 80px;
+  font-size: 0.8rem;
   font-weight: 600;
+  color: #6c7686;
+  width: 64px;
   height: 36px;
-  line-height: 40px;
-  background: #f5f5f5;
+  line-height: 36px;
   margin: auto;
   text-align: center;
 }
 .Head .space {
-  width: auto;
+  width: 51px;
 }
 
 .Item {
@@ -232,51 +240,53 @@ button {
   box-shadow: 1px 1px 3px -1px rgba(0, 0, 0, 0.3);
 }
 .ItemList__data .name {
-  font-size: 14px;
-  font-weight: 500;
+  font-size: 1rem;
   color: #6c7686;
-  margin: auto auto auto 0;
+  margin: auto 0;
   text-align: left;
-  padding-left: 10px;
-  width: 200px;
+  padding-left: 6px;
+  width: 124px;
+  line-height: 1;
 }
 .ItemList__data .gross {
-  font-size: 14px;
-  font-weight: 500;
-  width: 80px;
+  font-size: 1rem;
+  width: 64px;
   font-weight: 600;
   height: 36px;
-  line-height: 40px;
+  line-height: 2.2;
   background: #f5f5f5;
   margin: auto;
   text-align: center;
 }
 .ItemList__data .point {
-  font-size: 14px;
-  font-weight: 500;
-  width: 80px;
+  font-size: 1rem;
+  width: 64px;
   font-weight: 600;
   height: 36px;
-  line-height: 40px;
+  line-height: 2.2;
   background: #f5f5f5;
   margin: auto;
   text-align: center;
 }
 .ItemList__data .score {
-  font-size: 14px;
-  font-weight: 500;
+  font-size: 1rem;
   color: #6c7686;
-  width: 80px;
+  width: 64px;
   font-weight: 600;
   height: 36px;
-  line-height: 40px;
+  line-height: 2.2;
   background: #f5f5f5;
   margin: auto;
   text-align: center;
 }
+.ItemList__data .AddPlan {
+  width: 48px;
+  margin: auto 5px auto 0;
+}
 
 .Process {
   margin-bottom: 50px;
+  min-height: 48em;
 }
 .ProcessContainer {
   margin: auto 0;
@@ -287,9 +297,9 @@ button {
   min-width: 1280px;
 }
 .ProcessContainer .ProcessMain .ProcessList {
-  width: 320px;
-  margin-left: 30px;
-  margin-right: 30px;
+  width: 400px;
+  margin-left: 24px;
+  margin-right: 24px;
 }
 .ProcessContainer .ProcessMain .ProcessList__Border {
   padding: 10px 0;
@@ -322,7 +332,7 @@ button {
 .ProcessContainer .ProcessMain .ProcessList__Border .AddPlan {
   background: #b7cadc;
   font-size: 12px;
-  width: 64px;
+  width: 48px;
   height: 30px;
   line-height: 20px;
   text-align: center;
@@ -332,7 +342,7 @@ button {
   border-bottom: 2px solid #7694b180;
   border-right: 1px solid #cdd6df;
   border-radius: 4px;
-  margin: 4px;
+  margin: auto 3px auto 0;
   box-shadow: 0px 1px 4px 1px rgba(0, 0, 0, 0.2);
   -webkit-transform-style: preserve-3d;
   transform-style: preserve-3d;
@@ -347,11 +357,11 @@ button {
   border: 1px solid #b7cadc;
 }
 .ProcessContainer .ProcessMain .Result {
-  width: 920px;
+  width: 832px;
 }
 .ProcessContainer .ProcessMain .Result .title {
   margin: auto;
-  padding-left: 80px;
+  padding-left: 40px;
 }
 .ProcessContainer .ProcessMain .Result__Border {
   padding-top: 5px;
@@ -363,7 +373,7 @@ button {
   width: 50%;
   margin-bottom: 1em;
   padding-bottom: 1em;
-  border-bottom: 1px solid #b7cadc;
+  border-bottom: 1px solid #6c7686;
 }
 .ProcessContainer .ProcessMain .Result__Border .FlexCount {
   height: 88px;
@@ -412,11 +422,11 @@ button {
   box-shadow: 0px 1px 3px 0 rgba(0, 0, 0, 0.25);
 }
 .ProcessContainer .ProcessMain .Result__Border .FlexName .ResultName {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   border: 1px solid #b7cadc;
-  width: 240px;
-  height: 44px;
-  line-height: 40px;
+  width: 197px;
+  height: 50px;
+  line-height: 46px;
   margin: 4px 10px;
   box-shadow: 0px 1px 3px 0 rgba(0, 0, 0, 0.25);
 }
@@ -450,7 +460,7 @@ button {
   height: 88px;
 }
 .ProcessContainer .ProcessMain .Result__Border .FlexCross__item {
-  width: 80px;
+  width: 40px;
   height: 44px;
   line-height: 44px;
 }

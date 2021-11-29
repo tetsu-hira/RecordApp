@@ -1,5 +1,6 @@
 .Process {
   margin-bottom: 50px;
+  min-height: 48em;
   &Container {
     margin: auto 0;
     padding-top: 64px;
@@ -8,9 +9,9 @@
       display: flex;
       min-width: 1280px;
       .ProcessList {
-        width: 320px;
-        margin-left: 30px;
-        margin-right: 30px;
+        width: 400px;
+        margin-left: 24px;
+        margin-right: 24px;
         &__Border {
           padding: 10px 0;
           .SelectBox {
@@ -42,7 +43,7 @@
           .AddPlan {
             background: $PrimaryColor;
             font-size: 12px;
-            width: 64px;
+            width: 48px;
             height: 30px;
             line-height: 20px;
             text-align: center;
@@ -52,7 +53,7 @@
             border-bottom: 2px solid #7694b180;
             border-right: 1px solid #cdd6df;
             border-radius: 4px;
-            margin: 4px;
+            margin: auto 3px auto 0;
             box-shadow: 0px 1px 4px 1px rgba(0, 0, 0, 20%);
             -webkit-transform-style: preserve-3d;
             transform-style: preserve-3d;
@@ -69,10 +70,10 @@
         }
       }
       .Result {
-        width: 920px;
+        width: 832px;
         .title {
           margin: auto;
-          padding-left: 80px;
+          padding-left: 40px;
         }
         &__Border {
           padding-top: 5px;
@@ -83,7 +84,7 @@
             width: 50%;
             margin-bottom: 1em;
             padding-bottom: 1em;
-            border-bottom: 1px solid $PrimaryColor;
+            border-bottom: 1px solid $FontColor;
             &Count {
               height: 88px;
               &__flex {
@@ -134,11 +135,11 @@
                 box-shadow: 0px 1px 3px 0 rgba(0, 0, 0, 0.25);
               }
               .ResultName {
-                font-size: 1.5rem;
+                font-size: 1.2rem;
                 border: 1px solid $PrimaryColor;
-                width: 240px;
-                height: 44px;
-                line-height: 40px;
+                width: 197px;
+                height: 50px;
+                line-height: 46px;
                 margin: 4px 10px;
                 box-shadow: 0px 1px 3px 0 rgba(0, 0, 0, 0.25);
               }
@@ -176,7 +177,7 @@
             &Cross {
               height: 88px;
               &__item {
-                width: 80px;
+                width: 40px;
                 height: 44px;
                 line-height: 44px;
               }
