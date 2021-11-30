@@ -74,7 +74,6 @@ button {
   width: 100%;
   display: flex;
   justify-content: space-between;
-  position: fixed;
   box-shadow: inset 0px 0px 0 rgba(255, 255, 255, 0.3), 2px 2px 4px rgba(0, 0, 0, 0.3);
   z-index: 100;
   min-width: 960px;
@@ -290,7 +289,7 @@ button {
 }
 .ProcessContainer {
   margin: auto 0;
-  padding-top: 64px;
+  padding-top: 16px;
 }
 .ProcessContainer .ProcessMain {
   display: flex;

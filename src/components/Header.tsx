@@ -6,7 +6,7 @@ import { useEffect } from "react";
 
 
 const Header: React.FC = () => {
-  const [ title, setTitle ] = useState<string>("※ここに大会名や部門を入力してください※")
+const [ title, setTitle ] = useState<string>("※この文章を消して大会名や部門を入力※")
 
   const changeTitle = (e:any) => {
     setTitle(e.target.value);

@@ -15,11 +15,11 @@ type Pro = {
   score: number
 }
 
-type Pros = {
+type Scr = {
   name: any
   time1: number
   time2: number
-  // count: number
+  count: number
 }
 
 // type Cell = {
@@ -40,11 +40,12 @@ type Pros = {
 
 
 const Process: React.FC = () => {
-  const [ plan, setPlan ] = useState<Pros[]>([]);
+  const [ plan, setPlan ] = useState<Scr[]>([]);
   const [ time1, setTime1 ] = useState<number>(0);
   const [ time2, setTime2 ] = useState<number>(0);
   const [ list, setList ] = useState<Pro[]>([]);
   const [ data, setData ] = useState<any>();
+  const [ count, setCount ] =useState<number>(0);
 
 
   const changeData = (e:any) => {
@@ -69,31 +70,89 @@ const Process: React.FC = () => {
 
   const addPlan = (index: number) => {
     const addName: any = list.find((elem) => list[index] === elem )
-    setPlan([...plan, {name: addName.name, time1: 0, time2: 0}]);
+    setPlan([...plan, {name: addName.name, time1: 0, time2: 0, count: 0}]);
     const result: any = plan.filter(plans => {
       return plans.name === list[index].name
     })
-    // console.log(result1.length);
-    // list[0].gross = result1.length;
-    // setList([...list, ]);
-    // const result: any = list.find((elem) => list[index] === elem)
-    console.log(result);
     const result1 = result.length + 1;
     list[index].gross = result1;
   }
 
 
   const addTime1 = (index:number, minute:number) => {
-    const targetPlan: any = plan.find((elem) => plan[index] === elem )
+    const targetPlan: Scr = plan.find((elem) => plan[index] === elem)
     targetPlan.time1 = targetPlan.time1 + minute
     setTime1(targetPlan.time1)
+    // 奇数か偶数で処理を変える
+    if (index % 2 === 0) {
+      const nextPlan: Scr = plan.find((elem) => plan[index + 1] === elem);
+      targetPlan.count = (targetPlan.time1 + targetPlan.time2) - (nextPlan.time1 + nextPlan.time2);
+      nextPlan.count = (nextPlan.time1 + nextPlan.time2) - (targetPlan.time1 + targetPlan.time2);
+      setCount(targetPlan.count);
+    } else {
+      const prevPlan: Scr = plan.find((elem) => plan[index - 1] === elem);
+      targetPlan.count = (targetPlan.time1 + targetPlan.time2) - (prevPlan.time1 + prevPlan.time2);
+      prevPlan.count = (prevPlan.time1 + prevPlan.time2) - (targetPlan.time1 + targetPlan.time2);
+      setCount(targetPlan.count);
+    }
+    // ここから繰り返し処理
+    for ( let i = 0; i < list.length; i++ ) {
+      const countPlan: any = list.find((elem) => list[i] === elem)
+      // 全試合の合計値をtotalに代入
+      const sumCount: any = plan.filter(plans => {
+        return plans.name === countPlan.name
+      })
+      const total = sumCount.reduce(function(sum: number, element: any) {
+        return sum + element.count;
+      }, 0);
+      // 合計をlistに反映
+      const update: any = list.find((elem) => elem.name === countPlan.name);
+      console.log(update.name);
+      update.score = total;
+      console.log(update);
+    }
+    // ここまで繰り返し
+    // コンソールでエラーを回避
+    console.log("ここからエラー回避");
     console.log(time1);
+    console.log(count);
   }
   const addTime2 = (index:number, minute:number) => {
     const targetPlan: any = plan.find((elem) => plan[index] === elem )
     targetPlan.time2 = targetPlan.time2 + minute
     setTime2(targetPlan.time2)
+    // 奇数か偶数で処理を変える
+    if (index % 2 === 0) {
+      const nextPlan: Scr = plan.find((elem) => plan[index + 1] === elem);
+      targetPlan.count = (targetPlan.time1 + targetPlan.time2) - (nextPlan.time1 + nextPlan.time2);
+      nextPlan.count = (nextPlan.time1 + nextPlan.time2) - (targetPlan.time1 + targetPlan.time2);
+      setCount(targetPlan.count);
+    } else {
+      const prevPlan: Scr = plan.find((elem) => plan[index - 1] === elem);
+      targetPlan.count = (targetPlan.time1 + targetPlan.time2) - (prevPlan.time1 + prevPlan.time2);
+      prevPlan.count = (prevPlan.time1 + prevPlan.time2) - (targetPlan.time1 + targetPlan.time2);
+      setCount(targetPlan.count);
+    }
+    // ここから繰り返し処理
+    for ( let i = 0; i < list.length; i++ ) {
+      const countPlan: any = list.find((elem) => list[i] === elem)
+      // 全試合の合計値をtotalに代入
+      const sumCount: any = plan.filter(plans => {
+        return plans.name === countPlan.name
+      })
+      const total = sumCount.reduce(function(sum: number, element: any) {
+        return sum + element.count;
+      }, 0);
+      // 合計をlistに反映
+      const update: any = list.find((elem) => elem.name === countPlan.name);
+      console.log(update.name);
+      update.score = total;
+      console.log(update);
+    }
+    // ここまで繰り返し
+    // コンソールでエラーを回避
     console.log(time2);
+    console.log(count);
   }
 
   /* いずれは実装したい
@@ -138,7 +197,7 @@ const Process: React.FC = () => {
   // }
 
   // 確認のため設置
-  console.log(list);
+  // console.log(list.length);
 
 
   return (
@@ -146,7 +205,7 @@ const Process: React.FC = () => {
       <div className="ProcessContainer">
         <div className="ProcessMain">
           <div className="ProcessList">
-            <h1>【設備一覧】</h1>
+            <h1>【チーム一覧】</h1>
             <div className="ProcessList__Border">
               <div className="Head">
                 <div className="name">チーム名</div>
@@ -177,7 +236,7 @@ const Process: React.FC = () => {
             </div>
           </div>
           <div className="Result">
-            <h1 className="title">【工程設計】</h1>
+            <h1 className="title">【試合内容】</h1>
               <div className="Result__Border">
                 { plan.map((item, idx: number) => (
                   <div className="Flex" key={idx}>
