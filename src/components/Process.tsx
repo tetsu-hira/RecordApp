@@ -20,6 +20,7 @@ type Scr = {
   time1: number
   time2: number
   count: number
+  marks: number
 }
 
 // type Cell = {
@@ -46,11 +47,30 @@ const Process: React.FC = () => {
   const [ list, setList ] = useState<Pro[]>([]);
   const [ data, setData ] = useState<any>();
   const [ count, setCount ] =useState<number>(0);
+  const [ win, setWin ] = useState<number>(0);
+  const [ lose, setLose ] = useState<number>(0);
+  const [ drawWin, setDrawWin ] = useState<number>(0);
+  const [ drawDraw, setDrawDraw ] = useState<number>(0);
+  const [ drawLose, setDrawLose ] = useState<number>(0);
+
 
 
   const changeData = (e:any) => {
     setData(e.target.value)
     // setCount(Math.random());
+  }
+  const changeWin = (e:any) => {
+    setWin(e.target.value)
+    setLose(0);
+  }
+  const changeDrawWin = (e:any) => {
+    setDrawWin(e.target.value)
+  }
+  const changeDrawDraw = (e:any) => {
+    setDrawDraw(e.target.value)
+  }
+  const changeDrawLose = (e:any) => {
+    setDrawLose(e.target.value)
   }
   const addList = () => {
     setList([...list, {
@@ -70,7 +90,7 @@ const Process: React.FC = () => {
 
   const addPlan = (index: number) => {
     const addName: any = list.find((elem) => list[index] === elem )
-    setPlan([...plan, {name: addName.name, time1: 0, time2: 0, count: 0}]);
+    setPlan([...plan, {name: addName.name, time1: 0, time2: 0, count: 0, marks: 0}]);
     const result: any = plan.filter(plans => {
       return plans.name === list[index].name
     })
@@ -89,16 +109,58 @@ const Process: React.FC = () => {
       targetPlan.count = (targetPlan.time1 + targetPlan.time2) - (nextPlan.time1 + nextPlan.time2);
       nextPlan.count = (nextPlan.time1 + nextPlan.time2) - (targetPlan.time1 + targetPlan.time2);
       setCount(targetPlan.count);
+      if (targetPlan.time1 > nextPlan.time1 && targetPlan.time2 > nextPlan.time2) {
+        targetPlan.marks = Number(win);
+          nextPlan.marks = Number(lose);
+      } else if (targetPlan.time1 < nextPlan.time1 && targetPlan.time2 < nextPlan.time2) {
+        targetPlan.marks = Number(lose);
+          nextPlan.marks = Number(win);
+      } else if ((targetPlan.time1 < nextPlan.time1 && targetPlan.time2 > nextPlan.time2) || (targetPlan.time1 > nextPlan.time1 && targetPlan.time2 < nextPlan.time2)) {
+        if ((targetPlan.time1 + targetPlan.time2) > (nextPlan.time1 + nextPlan.time2)) {
+          targetPlan.marks = Number(drawWin);
+            nextPlan.marks = Number(drawLose);
+        } else if ((targetPlan.time1 + targetPlan.time2) < (nextPlan.time1 + nextPlan.time2)) {
+          targetPlan.marks = Number(drawLose);
+            nextPlan.marks = Number(drawWin);
+        } else {
+          targetPlan.marks = Number(drawDraw);
+            nextPlan.marks = Number(drawDraw);
+        }
+      } else {
+        targetPlan.marks = Number(lose);
+          nextPlan.marks = Number(lose);
+      }
     } else {
       const prevPlan: Scr = plan.find((elem) => plan[index - 1] === elem);
       targetPlan.count = (targetPlan.time1 + targetPlan.time2) - (prevPlan.time1 + prevPlan.time2);
       prevPlan.count = (prevPlan.time1 + prevPlan.time2) - (targetPlan.time1 + targetPlan.time2);
       setCount(targetPlan.count);
+      if (targetPlan.time1 > prevPlan.time1 && targetPlan.time2 > prevPlan.time2) {
+        targetPlan.marks = Number(win);
+          prevPlan.marks = Number(lose);
+      } else if (targetPlan.time1 < prevPlan.time1 && targetPlan.time2 < prevPlan.time2) {
+        targetPlan.marks = Number(lose);
+          prevPlan.marks = Number(win);
+      } else if ((targetPlan.time1 < prevPlan.time1 && targetPlan.time2 > prevPlan.time2) || (targetPlan.time1 > prevPlan.time1 && targetPlan.time2 < prevPlan.time2)) {
+        if ((targetPlan.time1 + targetPlan.time2) > (prevPlan.time1 + prevPlan.time2)) {
+          targetPlan.marks = Number(drawWin);
+            prevPlan.marks = Number(drawLose);
+        } else if ((targetPlan.time1 + targetPlan.time2) < (prevPlan.time1 + prevPlan.time2)) {
+          targetPlan.marks = Number(drawLose);
+            prevPlan.marks = Number(drawWin);
+        } else {
+          targetPlan.marks = Number(drawDraw);
+            prevPlan.marks = Number(drawDraw);
+        }
+      } else {
+        targetPlan.marks = Number(lose);
+          prevPlan.marks = Number(lose);
+      }
     }
     // ここから繰り返し処理
     for ( let i = 0; i < list.length; i++ ) {
-      const countPlan: any = list.find((elem) => list[i] === elem)
-      // 全試合の合計値をtotalに代入
+      const countPlan: Pro = list.find((elem) => list[i] === elem)
+      // 得失点の合計値をtotalに代入
       const sumCount: any = plan.filter(plans => {
         return plans.name === countPlan.name
       })
@@ -107,9 +169,17 @@ const Process: React.FC = () => {
       }, 0);
       // 合計をlistに反映
       const update: any = list.find((elem) => elem.name === countPlan.name);
-      console.log(update.name);
       update.score = total;
-      console.log(update);
+      // 勝ち点の合計値をamountに代入
+      const sumMarks: any = plan.filter(plans => {
+        return plans.name === countPlan.name
+      })
+      const amount = sumMarks.reduce(function(sum: number, element: any) {
+        return sum + element.marks;
+      }, 0);
+      // 合計をlistに反映
+      const overwrite: any = list.find((elem) => elem.name === countPlan.name);
+      overwrite.point = amount;
     }
     // ここまで繰り返し
     // コンソールでエラーを回避
@@ -127,16 +197,58 @@ const Process: React.FC = () => {
       targetPlan.count = (targetPlan.time1 + targetPlan.time2) - (nextPlan.time1 + nextPlan.time2);
       nextPlan.count = (nextPlan.time1 + nextPlan.time2) - (targetPlan.time1 + targetPlan.time2);
       setCount(targetPlan.count);
+      if (targetPlan.time1 > nextPlan.time1 && targetPlan.time2 > nextPlan.time2) {
+        targetPlan.marks = Number(win);
+          nextPlan.marks = Number(lose);
+      } else if (targetPlan.time1 < nextPlan.time1 && targetPlan.time2 < nextPlan.time2) {
+        targetPlan.marks = Number(lose);
+          nextPlan.marks = Number(win);
+      } else if ((targetPlan.time1 < nextPlan.time1 && targetPlan.time2 > nextPlan.time2) || (targetPlan.time1 > nextPlan.time1 && targetPlan.time2 < nextPlan.time2)) {
+        if ((targetPlan.time1 + targetPlan.time2) > (nextPlan.time1 + nextPlan.time2)) {
+          targetPlan.marks = Number(drawWin);
+            nextPlan.marks = Number(drawLose);
+        } else if ((targetPlan.time1 + targetPlan.time2) < (nextPlan.time1 + nextPlan.time2)) {
+          targetPlan.marks = Number(drawLose);
+            nextPlan.marks = Number(drawWin);
+        } else {
+          targetPlan.marks = Number(drawDraw);
+            nextPlan.marks = Number(drawDraw);
+        }
+      } else {
+        targetPlan.marks = Number(lose);
+          nextPlan.marks = Number(lose);
+      }
     } else {
       const prevPlan: Scr = plan.find((elem) => plan[index - 1] === elem);
       targetPlan.count = (targetPlan.time1 + targetPlan.time2) - (prevPlan.time1 + prevPlan.time2);
       prevPlan.count = (prevPlan.time1 + prevPlan.time2) - (targetPlan.time1 + targetPlan.time2);
       setCount(targetPlan.count);
+      if (targetPlan.time1 > prevPlan.time1 && targetPlan.time2 > prevPlan.time2) {
+        targetPlan.marks = Number(win);
+          prevPlan.marks = Number(lose);
+      } else if (targetPlan.time1 < prevPlan.time1 && targetPlan.time2 < prevPlan.time2) {
+        targetPlan.marks = Number(lose);
+          prevPlan.marks = Number(win);
+      } else if ((targetPlan.time1 < prevPlan.time1 && targetPlan.time2 > prevPlan.time2) || (targetPlan.time1 > prevPlan.time1 && targetPlan.time2 < prevPlan.time2)) {
+        if ((targetPlan.time1 + targetPlan.time2) > (prevPlan.time1 + prevPlan.time2)) {
+          targetPlan.marks = Number(drawWin);
+            prevPlan.marks = Number(drawLose);
+        } else if ((targetPlan.time1 + targetPlan.time2) < (prevPlan.time1 + prevPlan.time2)) {
+          targetPlan.marks = Number(drawLose);
+            prevPlan.marks = Number(drawWin);
+        } else {
+          targetPlan.marks = Number(drawDraw);
+            prevPlan.marks = Number(drawDraw);
+        }
+      } else {
+        targetPlan.marks = Number(lose);
+          prevPlan.marks = Number(lose);
+      }
     }
     // ここから繰り返し処理
     for ( let i = 0; i < list.length; i++ ) {
-      const countPlan: any = list.find((elem) => list[i] === elem)
-      // 全試合の合計値をtotalに代入
+      const countPlan: Pro = list.find((elem) => list[i] === elem)
+      // 得失点の合計値をtotalに代入
       const sumCount: any = plan.filter(plans => {
         return plans.name === countPlan.name
       })
@@ -145,9 +257,17 @@ const Process: React.FC = () => {
       }, 0);
       // 合計をlistに反映
       const update: any = list.find((elem) => elem.name === countPlan.name);
-      console.log(update.name);
       update.score = total;
-      console.log(update);
+      // 勝ち点の合計値をamountに代入
+      const sumMarks: any = plan.filter(plans => {
+        return plans.name === countPlan.name
+      })
+      const amount = sumMarks.reduce(function(sum: number, element: any) {
+        return sum + element.marks;
+      }, 0);
+      // 合計をlistに反映
+      const overwrite: any = list.find((elem) => elem.name === countPlan.name);
+      overwrite.point = amount;
     }
     // ここまで繰り返し
     // コンソールでエラーを回避
@@ -197,7 +317,7 @@ const Process: React.FC = () => {
   // }
 
   // 確認のため設置
-  // console.log(list.length);
+  console.log(plan);
 
 
   return (
@@ -228,6 +348,26 @@ const Process: React.FC = () => {
                 ))}
               </ul>
             </div>
+            <h1>【勝ち点を入力】</h1>
+            <div className="Insert">
+              <div className="InsertContent">
+                <div className="InsertContent__text">勝ち</div>
+                <input className="InsertContent__entry" type="number" id="win" onChange={changeWin}></input>
+              </div>
+              <div className="InsertContent">
+              <div className="InsertContent__text">分勝</div>
+                <input className="InsertContent__entry" type="number" id="draw_win" onChange={changeDrawWin}></input>
+              </div>
+              <div className="InsertContent">
+              <div className="InsertContent__text">分分</div>
+                <input className="InsertContent__entry" type="number" id="draw_draw" onChange={changeDrawDraw}></input>
+              </div>
+              <div className="InsertContent">
+              <div className="InsertContent__text">分負</div>
+                <input className="InsertContent__entry" type="number" id="draw_lose" onChange={changeDrawLose}></input>
+              </div>
+            </div>
+            <h1>【チームを追加】</h1>
             <div className="Form">
               <div className="FormContent">
                 <input className="FormContent__name" type="text" id="name" onChange={changeData}></input>

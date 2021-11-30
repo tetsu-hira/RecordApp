@@ -14,6 +14,7 @@
         margin-right: 24px;
         &__Border {
           padding: 10px 0;
+          margin-bottom: 1em;
           .SelectBox {
             display: flex;
           }
@@ -38,33 +39,6 @@
             }
             option {
               text-align: center;
-            }
-          }
-          .AddPlan {
-            background: $PrimaryColor;
-            font-size: 12px;
-            width: 48px;
-            height: 30px;
-            line-height: 20px;
-            text-align: center;
-            color: $WhiteColor;
-            border-top: 1px solid #cdd6df;
-            border-left: 1px solid #cdd6df;
-            border-bottom: 2px solid #7694b180;
-            border-right: 1px solid #cdd6df;
-            border-radius: 4px;
-            margin: auto 3px auto 0;
-            box-shadow: 0px 1px 4px 1px rgba(0, 0, 0, 20%);
-            -webkit-transform-style: preserve-3d;
-            transform-style: preserve-3d;
-            &:hover {
-              cursor: pointer;
-            }
-            &:active {
-              -webkit-transform: translateY(2px);
-              transform: translateY(2px);
-              box-shadow: 0 0 2px rgba(0, 0, 0, 0.35);
-              border: 1px solid $PrimaryColor;
             }
           }
         }

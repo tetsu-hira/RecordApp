@@ -3,21 +3,20 @@
   &List {
     height: 40px;
     margin: 4px 0;
-    border-top: none;
     display: flex;
     align-items: center;
-    border: 1px solid $SubColor;
     &__data {
       display: flex;
       width: 100%;
-      background-color: #fff;
-      box-shadow: 1px 1px 3px -1px rgba(0, 0, 0, 0.3);
+      background-color: $SubColor;
+      box-shadow: 1px 1px 3px 0px rgba(0, 0, 0, 0.3);
       .name {
         font-size: 1rem;
         color: $FontColor;
         margin: auto 0;
-        text-align: left;
-        padding-left: 6px;
+        text-align: center;
+        // padding-left: 12px;
+        font-weight: 600;
         width: 124px;
         line-height: 1;
       }
@@ -27,7 +26,7 @@
         font-weight: 600;
         height: 36px;
         line-height: 2.2;
-        background: $ChangeColor;
+        // background: $ChangeColor;
         margin: auto;
         text-align: center;
       }
@@ -37,7 +36,7 @@
         font-weight: 600;
         height: 36px;
         line-height: 2.2;
-        background: $ChangeColor;
+        // background: $ChangeColor;
         margin: auto;
         text-align: center;
       }
@@ -48,13 +47,39 @@
         font-weight: 600;
         height: 36px;
         line-height: 2.2;
-        background: $ChangeColor;
+        // background: $ChangeColor;
         margin: auto;
         text-align: center;
       }
       .AddPlan {
+        background: $PrimaryColor;
+        font-size: 12px;
         width: 48px;
-        margin: auto 5px auto 0;
+        height: 30px;
+        line-height: 29px;
+        text-align: center;
+        color: $WhiteColor;
+        // font-weight: 600;
+        // text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.65);
+        border-top: 1px solid $PrimaryColor;
+        border-left: 1px solid $PrimaryColor;
+        border-bottom: 2px solid #7694b180;
+        border-right: 1px solid $PrimaryColor;
+        border-radius: 4px;
+        margin: auto 3px auto 0;
+        box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 15%);
+        -webkit-transform-style: preserve-3d;
+        transform-style: preserve-3d;
+        &:hover {
+          cursor: pointer;
+        }
+        &:active {
+          -webkit-transform: translateY(1px);
+          transform: translateY(1px);
+          box-shadow: none;
+          border-top: 1px solid #cdd6df;
+          border-bottom: none;
+        }
       }
     }
   }

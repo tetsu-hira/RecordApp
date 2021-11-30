@@ -1,0 +1,20 @@
+.Insert {
+  display: flex;
+  justify-content: space-around;
+  padding-bottom: 2em;
+  &Content {
+    &__text {
+      font-weight: 600;
+    }
+    &__entry {
+      color: $FontColor;
+      width: 48px;
+      height: 40px;
+      border: 1px solid $PrimaryColor;
+      align-items: center;
+      text-align: center;
+      margin: auto 7px;
+      box-shadow: 1px 1px 3px -1px rgba(0, 0, 0, 0.3);
+    }
+  }
+}

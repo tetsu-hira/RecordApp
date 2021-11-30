@@ -141,15 +141,17 @@ button {
 }
 .FormContent {
   display: flex;
+  margin: auto;
 }
 .FormContent__name {
   height: 40px;
   border: 1px solid #b7cadc;
   display: flex;
   align-items: center;
-  margin: auto 7px;
+  margin: auto 16px;
   width: 200px;
   box-shadow: 1px 1px 3px -1px rgba(0, 0, 0, 0.3);
+  color: #6c7686;
 }
 .FormContent__button {
   background: #dcc9b7;
@@ -175,26 +177,30 @@ button {
   border-top: none;
   display: flex;
   align-items: center;
-  border: 1px solid #fff;
   width: 100%;
-  background-color: #b7cadc;
-  box-shadow: 1px 1px 3px -1px rgba(0, 0, 0, 0.3);
-  text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.65);
+  background-color: #fff;
 }
 .Head .name {
   font-size: 0.8rem;
   font-weight: 600;
   color: #6c7686;
-  margin: auto 0;
+  margin: auto;
+  margin-left: 0;
   text-align: center;
-  width: 124px;
+  height: 36px;
+  width: 118px;
+  background-color: #e2f1f1;
+  line-height: 36px;
+  box-shadow: 1px 1px 3px 0px rgba(0, 0, 0, 0.3);
 }
 .Head .gross {
   font-size: 0.8rem;
   font-weight: 600;
   width: 64px;
   height: 36px;
+  background-color: #e2f1f1;
   line-height: 36px;
+  box-shadow: 1px 1px 3px 0px rgba(0, 0, 0, 0.3);
   margin: auto;
   text-align: center;
 }
@@ -204,6 +210,8 @@ button {
   width: 64px;
   height: 36px;
   line-height: 36px;
+  background-color: #e2f1f1;
+  box-shadow: 1px 1px 3px 0px rgba(0, 0, 0, 0.3);
   margin: auto;
   text-align: center;
 }
@@ -214,11 +222,32 @@ button {
   width: 64px;
   height: 36px;
   line-height: 36px;
+  background-color: #e2f1f1;
+  box-shadow: 1px 1px 3px 0px rgba(0, 0, 0, 0.3);
   margin: auto;
   text-align: center;
 }
 .Head .space {
   width: 51px;
+}
+
+.Insert {
+  display: flex;
+  justify-content: space-around;
+  padding-bottom: 2em;
+}
+.InsertContent__text {
+  font-weight: 600;
+}
+.InsertContent__entry {
+  color: #6c7686;
+  width: 48px;
+  height: 40px;
+  border: 1px solid #b7cadc;
+  align-items: center;
+  text-align: center;
+  margin: auto 7px;
+  box-shadow: 1px 1px 3px -1px rgba(0, 0, 0, 0.3);
 }
 
 .Item {
@@ -227,23 +256,21 @@ button {
 .ItemList {
   height: 40px;
   margin: 4px 0;
-  border-top: none;
   display: flex;
   align-items: center;
-  border: 1px solid #e2f1f1;
 }
 .ItemList__data {
   display: flex;
   width: 100%;
-  background-color: #fff;
-  box-shadow: 1px 1px 3px -1px rgba(0, 0, 0, 0.3);
+  background-color: #e2f1f1;
+  box-shadow: 1px 1px 3px 0px rgba(0, 0, 0, 0.3);
 }
 .ItemList__data .name {
   font-size: 1rem;
   color: #6c7686;
   margin: auto 0;
-  text-align: left;
-  padding-left: 6px;
+  text-align: center;
+  font-weight: 600;
   width: 124px;
   line-height: 1;
 }
@@ -253,7 +280,6 @@ button {
   font-weight: 600;
   height: 36px;
   line-height: 2.2;
-  background: #f5f5f5;
   margin: auto;
   text-align: center;
 }
@@ -263,7 +289,6 @@ button {
   font-weight: 600;
   height: 36px;
   line-height: 2.2;
-  background: #f5f5f5;
   margin: auto;
   text-align: center;
 }
@@ -274,13 +299,36 @@ button {
   font-weight: 600;
   height: 36px;
   line-height: 2.2;
-  background: #f5f5f5;
   margin: auto;
   text-align: center;
 }
 .ItemList__data .AddPlan {
+  background: #b7cadc;
+  font-size: 12px;
   width: 48px;
-  margin: auto 5px auto 0;
+  height: 30px;
+  line-height: 29px;
+  text-align: center;
+  color: #fff;
+  border-top: 1px solid #b7cadc;
+  border-left: 1px solid #b7cadc;
+  border-bottom: 2px solid #7694b180;
+  border-right: 1px solid #b7cadc;
+  border-radius: 4px;
+  margin: auto 3px auto 0;
+  box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.15);
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+}
+.ItemList__data .AddPlan:hover {
+  cursor: pointer;
+}
+.ItemList__data .AddPlan:active {
+  -webkit-transform: translateY(1px);
+  transform: translateY(1px);
+  box-shadow: none;
+  border-top: 1px solid #cdd6df;
+  border-bottom: none;
 }
 
 .Process {
@@ -302,6 +350,7 @@ button {
 }
 .ProcessContainer .ProcessMain .ProcessList__Border {
   padding: 10px 0;
+  margin-bottom: 1em;
 }
 .ProcessContainer .ProcessMain .ProcessList__Border .SelectBox {
   display: flex;
@@ -327,33 +376,6 @@ button {
 }
 .ProcessContainer .ProcessMain .ProcessList__Border select option {
   text-align: center;
-}
-.ProcessContainer .ProcessMain .ProcessList__Border .AddPlan {
-  background: #b7cadc;
-  font-size: 12px;
-  width: 48px;
-  height: 30px;
-  line-height: 20px;
-  text-align: center;
-  color: #fff;
-  border-top: 1px solid #cdd6df;
-  border-left: 1px solid #cdd6df;
-  border-bottom: 2px solid #7694b180;
-  border-right: 1px solid #cdd6df;
-  border-radius: 4px;
-  margin: auto 3px auto 0;
-  box-shadow: 0px 1px 4px 1px rgba(0, 0, 0, 0.2);
-  -webkit-transform-style: preserve-3d;
-  transform-style: preserve-3d;
-}
-.ProcessContainer .ProcessMain .ProcessList__Border .AddPlan:hover {
-  cursor: pointer;
-}
-.ProcessContainer .ProcessMain .ProcessList__Border .AddPlan:active {
-  -webkit-transform: translateY(2px);
-  transform: translateY(2px);
-  box-shadow: 0 0 2px rgba(0, 0, 0, 0.35);
-  border: 1px solid #b7cadc;
 }
 .ProcessContainer .ProcessMain .Result {
   width: 832px;
