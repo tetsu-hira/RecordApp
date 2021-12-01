@@ -5,31 +5,9 @@
   display: flex;
   justify-content: space-between;
   // position: fixed;
-  box-shadow: inset 0px 0px 0 rgba(255,255,255,0.3), 2px 2px 4px rgba(0, 0, 0, 0.3);
+  box-shadow: inset 0px 0px 0 rgba(255,255,255,0.3), 0px 1px 3px rgba(0, 0, 0, 0.2);
   z-index: 100;
   min-width: 960px;
-  h1 {
-    a {
-      font-size: 1.5rem;
-      text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.65);
-      margin-left: 16px;
-      width: auto;
-      padding: 0 16px;
-      height: 100%;
-      line-height: 1.9;
-      display: block;
-      
-      &:hover {
-        // border-top: 2px solid #9cb4ca;
-        // border-right: 2px solid #d0e0ee;
-        // // border-bottom: 1px solid #d0e0ee;
-        // border-left: 1px solid #87a2ba;
-        // transition: 0.1s;
-        // background-color: #b3c5d6;
-        opacity: 0.6;
-      }
-    }
-  }
   &Title {
     width: 100%;
     color: $FontColor;
