@@ -388,9 +388,7 @@ const Process: React.FC = () => {
                 <button className="FormContent__button" type="submit" onClick={addList}>チーム追加</button>
               </div>
             </div>
-            <div className="upButton"  onClick={returnTop}>
-              {/* <button className="arrow" onClick={returnTop}></button> */}
-            </div>
+            <div className="upButton"  onClick={returnTop}></div>
           </div>
           <div className="Result">
             <h1 className="title">【試合内容】</h1>

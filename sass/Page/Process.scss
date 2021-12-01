@@ -46,8 +46,8 @@
           position: fixed;
           font-size: 2rem;
           display: block;
-          bottom: 4rem;
-          left: 4rem;
+          bottom: 1rem;
+          left: 1rem;
           background-color: $SecondaryColor;
           width: 40px;
           height: 40px;
@@ -59,14 +59,14 @@
           border-radius: 50%;
           &:after {
             content: "";
-            width: 13px;
-            height: 13px;
+            width: 11px;
+            height: 11px;
             border: 2px solid;
             border-color: $WhiteColor $WhiteColor transparent transparent;
             transform: rotate(-45deg);
             position: relative;
             display: inline-block;
-            top: -6px;
+            top: -9px;
           }
           &:hover {
             background-color: #ffffff;
@@ -79,21 +79,6 @@
             border-color: $SecondaryColor $SecondaryColor transparent transparent;
             color: $SecondaryColor;
             transition: all 0.3s ease;
-          }
-          .arrow {
-            width: 20px;
-            height: 20px;
-            border: 3px solid;
-            border-color: $WhiteColor $WhiteColor transparent transparent;
-            transform: rotate(-45deg);
-            position: relative;
-            top: -3px;
-            &:hover {
-              // background-color: $SecondaryColor;
-              border-color: $SecondaryColor $SecondaryColor transparent transparent;
-              color: $SecondaryColor;
-              // transition: all 0.3s ease;
-            }
           }
         }
       }

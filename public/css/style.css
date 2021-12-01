@@ -369,8 +369,8 @@ button {
   position: fixed;
   font-size: 2rem;
   display: block;
-  bottom: 4rem;
-  left: 4rem;
+  bottom: 1rem;
+  left: 1rem;
   background-color: #dcc9b7;
   width: 40px;
   height: 40px;
@@ -383,14 +383,14 @@ button {
 }
 .ProcessContainer .ProcessMain .ProcessList .upButton:after {
   content: "";
-  width: 13px;
-  height: 13px;
+  width: 11px;
+  height: 11px;
   border: 2px solid;
   border-color: #fff #fff transparent transparent;
   transform: rotate(-45deg);
   position: relative;
   display: inline-block;
-  top: -6px;
+  top: -9px;
 }
 .ProcessContainer .ProcessMain .ProcessList .upButton:hover {
   background-color: #ffffff;
@@ -402,19 +402,6 @@ button {
   border-color: #dcc9b7 #dcc9b7 transparent transparent;
   color: #dcc9b7;
   transition: all 0.3s ease;
-}
-.ProcessContainer .ProcessMain .ProcessList .upButton .arrow {
-  width: 20px;
-  height: 20px;
-  border: 3px solid;
-  border-color: #fff #fff transparent transparent;
-  transform: rotate(-45deg);
-  position: relative;
-  top: -3px;
-}
-.ProcessContainer .ProcessMain .ProcessList .upButton .arrow:hover {
-  border-color: #dcc9b7 #dcc9b7 transparent transparent;
-  color: #dcc9b7;
 }
 .ProcessContainer .ProcessMain .Result {
   width: 832px;
