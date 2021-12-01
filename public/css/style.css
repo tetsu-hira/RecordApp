@@ -365,6 +365,57 @@ button {
 .ProcessContainer .ProcessMain .ProcessList__Border select option {
   text-align: center;
 }
+.ProcessContainer .ProcessMain .ProcessList .upButton {
+  position: fixed;
+  font-size: 2rem;
+  display: block;
+  bottom: 4rem;
+  left: 4rem;
+  background-color: #dcc9b7;
+  width: 40px;
+  height: 40px;
+  z-index: 999;
+  text-align: center;
+  color: #fff;
+  border: 1px solid #dcc9b7;
+  box-shadow: 2px 1px 5px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 50%;
+}
+.ProcessContainer .ProcessMain .ProcessList .upButton:after {
+  content: "";
+  width: 13px;
+  height: 13px;
+  border: 2px solid;
+  border-color: #fff #fff transparent transparent;
+  transform: rotate(-45deg);
+  position: relative;
+  display: inline-block;
+  top: -6px;
+}
+.ProcessContainer .ProcessMain .ProcessList .upButton:hover {
+  background-color: #ffffff;
+  color: #dcc9b7;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.ProcessContainer .ProcessMain .ProcessList .upButton:hover::after {
+  border-color: #dcc9b7 #dcc9b7 transparent transparent;
+  color: #dcc9b7;
+  transition: all 0.3s ease;
+}
+.ProcessContainer .ProcessMain .ProcessList .upButton .arrow {
+  width: 20px;
+  height: 20px;
+  border: 3px solid;
+  border-color: #fff #fff transparent transparent;
+  transform: rotate(-45deg);
+  position: relative;
+  top: -3px;
+}
+.ProcessContainer .ProcessMain .ProcessList .upButton .arrow:hover {
+  border-color: #dcc9b7 #dcc9b7 transparent transparent;
+  color: #dcc9b7;
+}
 .ProcessContainer .ProcessMain .Result {
   width: 832px;
 }

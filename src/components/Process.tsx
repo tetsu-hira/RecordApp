@@ -83,9 +83,16 @@ const Process: React.FC = () => {
   }
 
   const handleRemoveTask = (index:number) => {
+    const delTeam: any = plan.find((elem) => plan[index] === elem )
     const newPlan = [...plan]
     newPlan.splice(index, 1)
     setPlan(newPlan)
+    const result: any = newPlan.filter(plans => {
+      return plans.name === delTeam.name
+    })
+    const result1: any = list.find((elem) => elem.name === delTeam.name)
+    const result2 = result.length
+    result1.gross = result2
   }
 
   const addPlan = (index: number) => {
@@ -316,8 +323,15 @@ const Process: React.FC = () => {
   //   setPlan(items);
   // }
 
+  const returnTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
+
   // 確認のため設置
-  console.log(plan);
+  console.log(list);
 
 
   return (
@@ -373,6 +387,9 @@ const Process: React.FC = () => {
                 <input className="FormContent__name" type="text" id="name" onChange={changeData}></input>
                 <button className="FormContent__button" type="submit" onClick={addList}>チーム追加</button>
               </div>
+            </div>
+            <div className="upButton"  onClick={returnTop}>
+              {/* <button className="arrow" onClick={returnTop}></button> */}
             </div>
           </div>
           <div className="Result">

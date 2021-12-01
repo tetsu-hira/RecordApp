@@ -42,6 +42,60 @@
             }
           }
         }
+        .upButton {
+          position: fixed;
+          font-size: 2rem;
+          display: block;
+          bottom: 4rem;
+          left: 4rem;
+          background-color: $SecondaryColor;
+          width: 40px;
+          height: 40px;
+          z-index: 999;
+          text-align: center;
+          color: #fff;
+          border: 1px solid $SecondaryColor;
+          box-shadow: 2px 1px 5px 0 rgba(0, 0, 0, 20%);
+          border-radius: 50%;
+          &:after {
+            content: "";
+            width: 13px;
+            height: 13px;
+            border: 2px solid;
+            border-color: $WhiteColor $WhiteColor transparent transparent;
+            transform: rotate(-45deg);
+            position: relative;
+            display: inline-block;
+            top: -6px;
+          }
+          &:hover {
+            background-color: #ffffff;
+            color: $SecondaryColor;
+            cursor: pointer;
+            transition: all 0.3s ease;
+          }
+          &:hover::after {
+            // background-color: $SecondaryColor;
+            border-color: $SecondaryColor $SecondaryColor transparent transparent;
+            color: $SecondaryColor;
+            transition: all 0.3s ease;
+          }
+          .arrow {
+            width: 20px;
+            height: 20px;
+            border: 3px solid;
+            border-color: $WhiteColor $WhiteColor transparent transparent;
+            transform: rotate(-45deg);
+            position: relative;
+            top: -3px;
+            &:hover {
+              // background-color: $SecondaryColor;
+              border-color: $SecondaryColor $SecondaryColor transparent transparent;
+              color: $SecondaryColor;
+              // transition: all 0.3s ease;
+            }
+          }
+        }
       }
       .Result {
         width: 832px;
