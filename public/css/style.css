@@ -1,3 +1,4 @@
+@charset "UTF-8";
 * {
   box-sizing: border-box;
 }
@@ -411,29 +412,27 @@ button {
 .ProcessContainer .ProcessMain .Result__Border .FlexCount__flex .AddCount {
   background: #e2f1f1;
   font-size: 1rem;
-  width: 26px;
+  width: 25px;
   height: 25px;
+  line-height: 23px;
   text-align: center;
   color: #6c7686;
-  border-top: 1px solid #d7d7d7;
-  border-left: 1px solid #d7d7d7;
-  border-bottom: 1px solid #9dabb780;
-  border-right: 1px solid #9dabb780;
-  border-radius: 14px;
+  border-bottom: 2px solid #5a687480;
+  border-radius: 50%;
   margin: auto 2px;
   padding: 0;
   text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.65);
-  box-shadow: 1px 1px 3px 0px rgba(0, 0, 0, 0.2);
-  font-family: "Font Awesome 5 Free";
+  box-shadow: 0px 2px 3px 1px rgba(0, 0, 0, 0.13);
+  font-family: "游ゴシック", YuGothic, "游ゴシック体";
 }
 .ProcessContainer .ProcessMain .Result__Border .FlexCount__flex .AddCount:hover {
   cursor: pointer;
 }
 .ProcessContainer .ProcessMain .Result__Border .FlexCount__flex .AddCount:active {
-  -webkit-transform: translateY(2px);
-  transform: translateY(2px);
-  box-shadow: 0 0 2px rgba(0, 0, 0, 0.35);
-  border: 1px solid #e2f1f1;
+  -webkit-transform: translateY(1px);
+  transform: translateY(1px);
+  box-shadow: none;
+  border-bottom: 2px solid #e2f1f1;
 }
 .ProcessContainer .ProcessMain .Result__Border .FlexName .ResultIndex {
   border: 1px solid #b7cadc;
@@ -460,22 +459,23 @@ button {
   color: #fff;
   border-radius: 4px;
   margin: auto;
-  box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.15);
   -webkit-transform-style: preserve-3d;
   transform-style: preserve-3d;
-  border-top: 1px solid #cdd6df;
-  border-left: 1px solid #cdd6df;
-  border-bottom: solid 2px #7694b133;
-  border-right: solid 1px #cdd6df;
+  border-top: 1px solid #b7cadc;
+  border-left: 1px solid #b7cadc;
+  border-bottom: 2px solid #7694b180;
+  border-right: 1px solid #b7cadc;
 }
 .ProcessContainer .ProcessMain .Result__Border .FlexName .DeleteButton:hover {
   cursor: pointer;
 }
 .ProcessContainer .ProcessMain .Result__Border .FlexName .DeleteButton:active {
-  -webkit-transform: translateY(2px);
-  transform: translateY(2px);
-  box-shadow: 0 0 2px rgba(0, 0, 0, 0.35);
-  border: 1px solid #b7cadc;
+  -webkit-transform: translateY(1px);
+  transform: translateY(1px);
+  box-shadow: none;
+  border-top: none;
+  border-bottom: none;
 }
 .ProcessContainer .ProcessMain .Result__Border .FlexCross {
   height: 88px;
