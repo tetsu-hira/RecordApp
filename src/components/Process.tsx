@@ -80,6 +80,7 @@ const Process: React.FC = () => {
       point: 0,
       score: 0,
     }]);
+    setData('');
   }
 
   const handleRemoveTask = (index:number) => {
@@ -384,7 +385,7 @@ const Process: React.FC = () => {
             <h1>【チームを追加】</h1>
             <div className="Form">
               <div className="FormContent">
-                <input className="FormContent__name" type="text" id="name" onChange={changeData}></input>
+                <input className="FormContent__name" type="text" id="name" value={data} onChange={changeData}></input>
                 <button className="FormContent__button" type="submit" onClick={addList}>チーム追加</button>
               </div>
             </div>

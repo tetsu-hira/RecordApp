@@ -6,10 +6,13 @@ import { useEffect } from "react";
 
 
 const Header: React.FC = () => {
-const [ title, setTitle ] = useState<string>("＜この文章を消して大会名や部門を入力してください＞")
+const [ title, setTitle ] = useState<string>("＜ここをクリックして大会名や部門を入力してください＞")
 
   const changeTitle = (e:any) => {
     setTitle(e.target.value);
+  }
+  const titleClear = () => {
+    setTitle('');
   }
 
   useEffect(() => {
@@ -19,7 +22,7 @@ const [ title, setTitle ] = useState<string>("＜この文章を消して大会�
 
   return (
     <div className="Header">
-        <input className="HeaderTitle" type="text" onChange={changeTitle} value={title} />
+        <input className="HeaderTitle" type="text" onChange={changeTitle} onClick={titleClear} value={title} />
     </div>
   )
 }
