@@ -14,6 +14,11 @@ const [ title, setTitle ] = useState<string>("＜ここをクリックして大�
   const titleClear = () => {
     setTitle('');
   }
+  const returnTitle = () => {
+    if (!title) {
+      setTitle("＜ここをクリックして大会名や部門を入力してください＞");
+    }
+  }
 
   useEffect(() => {
     // Update the document title using the browser API
@@ -22,7 +27,7 @@ const [ title, setTitle ] = useState<string>("＜ここをクリックして大�
 
   return (
     <div className="Header">
-        <input className="HeaderTitle" type="text" onChange={changeTitle} onClick={titleClear} value={title} />
+        <input className="HeaderTitle" type="text" onChange={changeTitle} onClick={titleClear} onBlur={returnTitle} value={title} />
     </div>
   )
 }
