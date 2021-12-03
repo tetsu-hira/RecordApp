@@ -1,6 +1,7 @@
 {
   "name": "fives",
   "version": "0.1.0",
+  "homepage": "https://tetsu-hira.github.io/RecordApp/",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.4",
@@ -32,6 +33,8 @@
     "xlsx": "^0.17.1"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages master -d build",
     "start": "react-scripts start",
     "build": "cross-env PUBLIC_URL=/react-markdown-viewer react-scripts build",
     "test": "react-scripts test",
