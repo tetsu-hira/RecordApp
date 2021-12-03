@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/RecordApp/static/css/main.8c8b27cf.chunk.css",
+    "main.js": "/RecordApp/static/js/main.7bdde5e1.chunk.js",
+    "main.js.map": "/RecordApp/static/js/main.7bdde5e1.chunk.js.map",
+    "runtime-main.js": "/RecordApp/static/js/runtime-main.d52164d4.js",
+    "runtime-main.js.map": "/RecordApp/static/js/runtime-main.d52164d4.js.map",
+    "static/js/2.0359867e.chunk.js": "/RecordApp/static/js/2.0359867e.chunk.js",
+    "static/js/2.0359867e.chunk.js.map": "/RecordApp/static/js/2.0359867e.chunk.js.map",
+    "static/js/3.b2e61999.chunk.js": "/RecordApp/static/js/3.b2e61999.chunk.js",
+    "static/js/3.b2e61999.chunk.js.map": "/RecordApp/static/js/3.b2e61999.chunk.js.map",
+    "index.html": "/RecordApp/index.html",
+    "static/css/main.8c8b27cf.chunk.css.map": "/RecordApp/static/css/main.8c8b27cf.chunk.css.map",
+    "static/js/2.0359867e.chunk.js.LICENSE.txt": "/RecordApp/static/js/2.0359867e.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.d52164d4.js",
+    "static/js/2.0359867e.chunk.js",
+    "static/css/main.8c8b27cf.chunk.css",
+    "static/js/main.7bdde5e1.chunk.js"
+  ]
+}

@@ -1,0 +1,521 @@
+@charset "UTF-8";
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 100%;
+  font-family: "Hiragino Sans", sans-serif;
+  line-height: 1.7;
+  letter-spacing: 1px;
+}
+
+body {
+  margin: 0;
+  background-color: #fff;
+  color: #6c7686;
+}
+
+ul, li {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  display: block;
+  text-decoration: none;
+  color: #6c7686;
+  font-size: 14px;
+}
+a:hover {
+  transition: all 0.3s ease;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  margin: 0;
+}
+
+h1 {
+  font-weight: 600;
+  font-size: 24px;
+}
+
+input {
+  font-family: inherit;
+  font-size: 100%;
+}
+
+.Main {
+  display: block;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  padding: 0;
+  appearance: none;
+}
+
+.Footer {
+  bottom: 0;
+  width: 100%;
+  margin: auto;
+  height: 48px;
+  background: #f5f5f5;
+  line-height: 3.8;
+  font-size: 0.8rem;
+}
+
+.Header {
+  height: 48px;
+  background-color: #b7cadc;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  position: fixed;
+  box-shadow: inset 0px 0px 0 rgba(255, 255, 255, 0.3), 0px 1px 3px rgba(0, 0, 0, 0.2);
+  z-index: 100;
+  min-width: 960px;
+}
+.HeaderTitle {
+  width: 100%;
+  color: #6c7686;
+  border: none;
+  background-color: #b7cadc;
+  margin-left: 48px;
+  line-height: 2;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  outline: none;
+  font-size: 1.5rem;
+  font-weight: 600;
+  text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.65);
+}
+.Header .Jump {
+  display: flex;
+  line-height: 2;
+}
+.Header .JumpList {
+  height: 100%;
+  width: 96px;
+  display: inline-block;
+  padding: 0;
+  text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.65);
+}
+.Header .JumpList button {
+  text-decoration: none;
+}
+.Header .JumpList__item {
+  margin: auto;
+  text-align: center;
+  display: block;
+  width: 100%;
+  height: 100%;
+  color: #6c7686;
+  font-weight: 600;
+  line-height: 3.4;
+  text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.65);
+}
+.Header .JumpList__item:hover {
+  opacity: 0.6;
+  transition: 0.1s;
+}
+
+.Form {
+  display: flex;
+}
+.FormContent {
+  display: flex;
+  margin: auto;
+}
+.FormContent__name {
+  height: 40px;
+  border: 1px solid #b7cadc;
+  display: flex;
+  align-items: center;
+  margin: auto 16px;
+  width: 200px;
+  box-shadow: 1px 1px 3px -1px rgba(0, 0, 0, 0.3);
+  color: #6c7686;
+}
+.FormContent__button {
+  background: #dcc9b7;
+  font-size: 12px;
+  width: 100px;
+  height: 40px;
+  line-height: 20px;
+  text-align: center;
+  color: #fff;
+  border: 1px solid #dcc9b7;
+  margin: 8px 0;
+  box-shadow: 2px 1px 5px 0 rgba(0, 0, 0, 0.2);
+}
+.FormContent__button:hover {
+  background-color: #ffffff;
+  color: #dcc9b7;
+  transition: all 0.3s ease;
+}
+
+.Head {
+  height: 40px;
+  margin: 4px 0;
+  border-top: none;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  background-color: #fff;
+}
+.Head .name {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #6c7686;
+  margin: auto;
+  margin-left: 0;
+  text-align: center;
+  height: 36px;
+  width: 118px;
+  background-color: #e2f1f1;
+  line-height: 36px;
+  box-shadow: 1px 1px 3px 0px rgba(0, 0, 0, 0.3);
+}
+.Head .gross {
+  font-size: 0.8rem;
+  font-weight: 600;
+  width: 64px;
+  height: 36px;
+  background-color: #e2f1f1;
+  line-height: 36px;
+  box-shadow: 1px 1px 3px 0px rgba(0, 0, 0, 0.3);
+  margin: auto;
+  text-align: center;
+}
+.Head .point {
+  font-size: 0.8rem;
+  font-weight: 600;
+  width: 64px;
+  height: 36px;
+  line-height: 36px;
+  background-color: #e2f1f1;
+  box-shadow: 1px 1px 3px 0px rgba(0, 0, 0, 0.3);
+  margin: auto;
+  text-align: center;
+}
+.Head .score {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #6c7686;
+  width: 64px;
+  height: 36px;
+  line-height: 36px;
+  background-color: #e2f1f1;
+  box-shadow: 1px 1px 3px 0px rgba(0, 0, 0, 0.3);
+  margin: auto;
+  text-align: center;
+}
+.Head .space {
+  width: 51px;
+}
+
+.Insert {
+  display: flex;
+  justify-content: space-around;
+  padding-bottom: 2em;
+}
+.InsertContent__text {
+  font-weight: 600;
+}
+.InsertContent__entry {
+  color: #6c7686;
+  width: 48px;
+  height: 40px;
+  border: 1px solid #b7cadc;
+  align-items: center;
+  text-align: center;
+  margin: auto 7px;
+  box-shadow: 1px 1px 3px -1px rgba(0, 0, 0, 0.3);
+}
+
+.Item {
+  background-color: #fff;
+}
+.ItemList {
+  height: 40px;
+  margin: 4px 0;
+  display: flex;
+  align-items: center;
+}
+.ItemList__data {
+  display: flex;
+  width: 100%;
+  background-color: #e2f1f1;
+  box-shadow: 1px 1px 3px 0px rgba(0, 0, 0, 0.3);
+}
+.ItemList__data .name {
+  font-size: 1rem;
+  color: #6c7686;
+  margin: auto 0;
+  text-align: center;
+  font-weight: 600;
+  width: 124px;
+  line-height: 1;
+}
+.ItemList__data .gross {
+  font-size: 1rem;
+  width: 64px;
+  font-weight: 600;
+  height: 36px;
+  line-height: 2.2;
+  margin: auto;
+  text-align: center;
+}
+.ItemList__data .point {
+  font-size: 1rem;
+  width: 64px;
+  font-weight: 600;
+  height: 36px;
+  line-height: 2.2;
+  margin: auto;
+  text-align: center;
+}
+.ItemList__data .score {
+  font-size: 1rem;
+  color: #6c7686;
+  width: 64px;
+  font-weight: 600;
+  height: 36px;
+  line-height: 2.2;
+  margin: auto;
+  text-align: center;
+}
+.ItemList__data .AddPlan {
+  background: #b7cadc;
+  font-size: 12px;
+  width: 48px;
+  height: 26px;
+  line-height: 24px;
+  text-align: center;
+  color: #fff;
+  border-top: 1px solid #b7cadc;
+  border-left: 1px solid #b7cadc;
+  border-bottom: 2px solid #7694b180;
+  border-right: 1px solid #b7cadc;
+  border-radius: 4px;
+  margin: auto 4px auto 0;
+  box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.15);
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+}
+.ItemList__data .AddPlan:hover {
+  cursor: pointer;
+}
+.ItemList__data .AddPlan:active {
+  -webkit-transform: translateY(1px);
+  transform: translateY(1px);
+  box-shadow: none;
+  border-top: 1px solid #cdd6df;
+  border-bottom: none;
+}
+
+.Process {
+  margin-bottom: 50px;
+  min-height: 48em;
+  padding-top: 48px;
+}
+.ProcessContainer {
+  margin: auto 0;
+  padding-top: 16px;
+}
+.ProcessContainer .ProcessMain {
+  display: flex;
+  min-width: 1280px;
+}
+.ProcessContainer .ProcessMain .ProcessList {
+  width: 400px;
+  margin-left: 24px;
+  margin-right: 24px;
+}
+.ProcessContainer .ProcessMain .ProcessList__Border {
+  padding: 10px 0;
+  margin-bottom: 1em;
+}
+.ProcessContainer .ProcessMain .ProcessList__Border .SelectBox {
+  display: flex;
+}
+.ProcessContainer .ProcessMain .ProcessList__Border select {
+  width: 150px;
+  cursor: pointer;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  padding: 0 9px;
+  margin: 4px;
+  border: 1px solid #b7cadc;
+  text-align-last: right;
+  outline: none;
+  color: #6c7686;
+  height: 32px;
+  box-shadow: 1px 1px 3px 0 rgba(0, 0, 0, 0.25);
+}
+.ProcessContainer .ProcessMain .ProcessList__Border select:hover {
+  box-shadow: 2px 2px 3px 0 rgba(0, 0, 0, 0.25);
+  transform: translateY(-0.1875em);
+}
+.ProcessContainer .ProcessMain .ProcessList__Border select option {
+  text-align: center;
+}
+.ProcessContainer .ProcessMain .ProcessList .upButton {
+  position: fixed;
+  font-size: 2rem;
+  display: block;
+  bottom: 1rem;
+  left: 1rem;
+  background-color: #dcc9b7;
+  width: 40px;
+  height: 40px;
+  z-index: 999;
+  text-align: center;
+  color: #fff;
+  border: 1px solid #dcc9b7;
+  box-shadow: 2px 1px 5px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 50%;
+}
+.ProcessContainer .ProcessMain .ProcessList .upButton:after {
+  content: "";
+  width: 11px;
+  height: 11px;
+  border: 2px solid;
+  border-color: #fff #fff transparent transparent;
+  transform: rotate(-45deg);
+  position: relative;
+  display: inline-block;
+  top: -9px;
+}
+.ProcessContainer .ProcessMain .ProcessList .upButton:hover {
+  background-color: #ffffff;
+  color: #dcc9b7;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.ProcessContainer .ProcessMain .ProcessList .upButton:hover::after {
+  border-color: #dcc9b7 #dcc9b7 transparent transparent;
+  color: #dcc9b7;
+  transition: all 0.3s ease;
+}
+.ProcessContainer .ProcessMain .Result {
+  width: 832px;
+}
+.ProcessContainer .ProcessMain .Result .title {
+  margin: auto;
+  padding-left: 40px;
+}
+.ProcessContainer .ProcessMain .Result__Border {
+  padding-top: 5px;
+  display: flex;
+  flex-wrap: wrap;
+}
+.ProcessContainer .ProcessMain .Result__Border .Flex {
+  display: flex;
+  width: 50%;
+  margin-bottom: 1em;
+  padding-bottom: 1em;
+  border-bottom: 1px solid #6c7686;
+}
+.ProcessContainer .ProcessMain .Result__Border .FlexCount {
+  height: 88px;
+}
+.ProcessContainer .ProcessMain .Result__Border .FlexCount__flex {
+  display: flex;
+  height: 44px;
+}
+.ProcessContainer .ProcessMain .Result__Border .FlexCount__flex .ResultTime {
+  width: 60px;
+  margin: auto;
+  font-size: 1.5rem;
+}
+.ProcessContainer .ProcessMain .Result__Border .FlexCount__flex .AddCount {
+  background: #e2f1f1;
+  font-size: 1rem;
+  width: 25px;
+  height: 25px;
+  line-height: 23px;
+  text-align: center;
+  color: #6c7686;
+  border-bottom: 2px solid #5a687480;
+  border-radius: 50%;
+  margin: auto 2px;
+  padding: 0;
+  text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.65);
+  box-shadow: 0px 2px 3px 1px rgba(0, 0, 0, 0.13);
+  font-family: "游ゴシック", YuGothic, "游ゴシック体";
+}
+.ProcessContainer .ProcessMain .Result__Border .FlexCount__flex .AddCount:hover {
+  cursor: pointer;
+}
+.ProcessContainer .ProcessMain .Result__Border .FlexCount__flex .AddCount:active {
+  -webkit-transform: translateY(1px);
+  transform: translateY(1px);
+  box-shadow: none;
+  border-bottom: 2px solid #e2f1f1;
+}
+.ProcessContainer .ProcessMain .Result__Border .FlexName .ResultIndex {
+  border: 1px solid #b7cadc;
+  width: 60px;
+  margin: 5px auto;
+  height: 30px;
+  box-shadow: 0px 1px 3px 0 rgba(0, 0, 0, 0.25);
+}
+.ProcessContainer .ProcessMain .Result__Border .FlexName .ResultName {
+  font-size: 1.2rem;
+  border: 1px solid #b7cadc;
+  width: 197px;
+  height: 50px;
+  line-height: 46px;
+  margin: 4px 10px;
+  box-shadow: 0px 1px 3px 0 rgba(0, 0, 0, 0.25);
+}
+.ProcessContainer .ProcessMain .Result__Border .FlexName .DeleteButton {
+  background: #b7cadc;
+  font-size: 0.8rem;
+  min-width: 64px;
+  height: 22px;
+  text-align: center;
+  color: #fff;
+  border-radius: 4px;
+  margin: auto;
+  box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.15);
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  border-top: 1px solid #b7cadc;
+  border-left: 1px solid #b7cadc;
+  border-bottom: 2px solid #7694b180;
+  border-right: 1px solid #b7cadc;
+}
+.ProcessContainer .ProcessMain .Result__Border .FlexName .DeleteButton:hover {
+  cursor: pointer;
+}
+.ProcessContainer .ProcessMain .Result__Border .FlexName .DeleteButton:active {
+  -webkit-transform: translateY(1px);
+  transform: translateY(1px);
+  box-shadow: none;
+  border-top: none;
+  border-bottom: none;
+}
+.ProcessContainer .ProcessMain .Result__Border .FlexCross {
+  height: 88px;
+}
+.ProcessContainer .ProcessMain .Result__Border .FlexCross__item {
+  width: 40px;
+  height: 44px;
+  line-height: 44px;
+}
+.ProcessContainer .ProcessMain .Result__Border .FlexNumber {
+  height: 88px;
+}
+.ProcessContainer .ProcessMain .Result__Border .FlexNumber__item {
+  width: 80px;
+  line-height: 88px;
+}
